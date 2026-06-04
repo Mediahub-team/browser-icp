@@ -1,4 +1,15 @@
+---
+type: run
+stage: 5
+sources: ["[[guide-v2-deep-value-adoption]]"]
+branch: s4/guide-custdev-first
+status: untested
+tags: [stage/5, run]
+---
+
 # Сводка прогона: custdev v2 (глубокий) × 2026-06-04
+
+**Источники:** [[guide-v2-deep-value-adoption]] (этап 4); транскрипты в `transcripts/`.
 
 40 синтетических респондентов (Core 16 / Strong 12 / Peripheral 8 / Non-ICP 4) на гайде
 [`custdev v2`](../../04-interviews/custdev/guide-v2-deep-value-adoption.md). Транскрипты —

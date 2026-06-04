@@ -1,4 +1,19 @@
+---
+type: run
+stage: 5
+guide: "[[guide-v2-deep-value-adoption]]"
+branch: s4/guide-custdev-first
+date: 2026-06-04
+n: 40
+distribution: "core 16 / strong 12 / peripheral 8 / non-icp 4"
+status: untested
+personas: ["[[persona-icp01-artem]]", "[[persona-icp01-dasha]]", "[[persona-icp02-igor]]", "[[persona-icp02-marina]]", "[[persona-icp03-nikita]]", "[[persona-icp03-alina]]", "[[persona-icp04-olga]]", "[[persona-icp04-sergey]]", "[[persona-icp05-tatyana]]", "[[persona-icp05-ruslan]]", "[[persona-icp06-ekaterina]]", "[[persona-icp06-dmitry]]"]
+tags: [stage/5, run]
+---
+
 # Прогон: custdev-гайд v2 (глубокий) × 2026-06-04
+
+**Источники:** [[guide-v2-deep-value-adoption]] (этап 4) + персоны этапа 3.
 
 > Ветка `s4/guide-custdev-first` — развилка «сначала гоним кастдев-гайд». Гайд:
 > [`04-interviews/custdev/guide-v2-deep-value-adoption.md`](../../04-interviews/custdev/guide-v2-deep-value-adoption.md).
