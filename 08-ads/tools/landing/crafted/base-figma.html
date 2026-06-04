@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Кешбэк Браузер — возвращайте до 30% с покупок</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Бренд-токены из Figma-экспорта (node 1210:19474) */
+:root{
+  --ink:#000B21; --ink-2:#666D7A; --ink-3:#9AA0AC;
+  --accent:#6461FF; --accent-ink:#4B48D6; --p10:#EFEFFF; --p20:#E0DFFF;
+  --green:#00B81F; --green-soft:#E0F8E4;
+  --bg:#FFFFFF; --card:#FFFFFF; --line:rgba(0,11,33,.09);
+  --azure:#0783FD; --sans:"Manrope",system-ui,sans-serif;
+  --r:18px; --r-lg:28px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);
+  line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:430px;margin:0 auto;padding:0 20px}
+h1,h2,h3,p{margin:0}
+section{padding:40px 0}
+.h2{font-weight:800;font-size:26px;line-height:1.15;letter-spacing:-.02em}
+.lead{color:var(--ink-2);font-size:16px;margin-top:8px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.85);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:15px}
+.mark{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#fff;
+  font-weight:800;background:linear-gradient(135deg,var(--azure),var(--accent));
+  box-shadow:0 4px 12px rgba(100,97,255,.35)}
+.ghost{font-weight:700;font-size:14px;color:var(--ink);background:var(--p10);
+  border:none;border-radius:999px;padding:9px 16px;cursor:pointer}
+
+/* hero */
+.hero{background:linear-gradient(180deg,var(--p10),#fff 78%);padding:24px 0 36px}
+.phone{width:228px;margin:0 auto 22px;background:var(--p20);border-radius:34px;padding:14px 12px;
+  box-shadow:0 30px 60px -28px rgba(40,30,120,.45);position:relative}
+.phone::before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);
+  width:90px;height:6px;border-radius:99px;background:rgba(0,0,0,.25)}
+.notif{background:rgba(255,255,255,.9);border-radius:16px;padding:11px 12px;display:flex;
+  align-items:center;gap:9px;margin-top:10px;box-shadow:0 6px 16px -8px rgba(40,30,120,.25)}
+.notif:first-of-type{margin-top:22px}
+.notif .ic{width:30px;height:30px;border-radius:8px;flex:0 0 30px;
+  background:linear-gradient(135deg,var(--azure),var(--accent))}
+.notif .tx{flex:1;min-width:0}
+.notif .tx b{font-size:11px;font-weight:600;display:block;color:#000B21}
+.notif .tx span{font-size:10px;color:#888;opacity:.8}
+.notif .amt{font-weight:700;font-size:12px;color:var(--green);white-space:nowrap}
+h1{font-weight:800;font-size:clamp(27px,7.5vw,32px);line-height:1.18;letter-spacing:-.02em}
+.hero .lead{font-size:16px}
+.stores{display:flex;gap:10px;margin-top:20px}
+.store{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:#000B21;
+  color:#fff;border-radius:13px;padding:11px;font-size:13px;font-weight:600;text-decoration:none}
+.store .g{font-size:18px}
+.bonus{margin-top:14px;font-size:14px;color:var(--ink-2)}
+.bonus b{color:var(--accent)}
+
+/* assistant card */
+.acard{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:16px;box-shadow:0 16px 40px -24px rgba(20,20,70,.3);margin-top:18px}
+.atabs{display:flex;gap:14px;font-size:12px;color:var(--ink-3);font-weight:600;margin-bottom:12px}
+.atabs .on{color:var(--accent)}
+.product{display:flex;gap:14px;align-items:center}
+.thumb{width:84px;height:84px;border-radius:16px;flex:0 0 84px;
+  background:radial-gradient(120% 120% at 30% 20%,#fff,#E7E9F2);position:relative}
+.thumb::after{content:"";position:absolute;inset:22px;border-radius:50%;
+  background:linear-gradient(135deg,#cfd3e6,#aeb4d6)}
+.aibadge{position:absolute;top:8px;right:8px;background:var(--green);color:#fff;font-weight:800;
+  font-size:11px;border-radius:8px;padding:2px 6px}
+.product .pi b{font-size:15px}
+.stars{color:#FFB400;font-size:13px;margin-top:2px}
+.stars small{color:var(--ink-3)}
+.price{font-weight:800;font-size:18px;margin-top:4px}
+.bubbles{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.bub{font-size:13px;background:var(--p10);color:var(--accent-ink);border-radius:999px;padding:8px 13px}
+.bub.ai{background:var(--ink);color:#fff}
+
+/* category pills */
+.pills{display:grid;gap:10px;margin-top:18px}
+.pill{display:flex;align-items:center;justify-content:space-between;border-radius:14px;
+  padding:14px 18px;color:#fff;font-weight:700;font-size:15px;box-shadow:0 10px 24px -12px rgba(0,0,0,.4)}
+.pill .pc{font-weight:800}
+.pill.ozon{background:linear-gradient(135deg,#0A5DFF,#005BFF)}
+.pill.wb{background:linear-gradient(135deg,#7B1FA2,#CB11AB)}
+.pill.ym{background:linear-gradient(135deg,#FF3333,#FC3F1D)}
+.pill.lamoda{background:linear-gradient(135deg,#222,#000)}
+.pill.mega{background:linear-gradient(135deg,#7A5CFF,#5A3BE6)}
+
+/* 3 steps */
+.steps{display:grid;gap:14px;margin-top:18px}
+.step{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800;
+  color:#fff;background:var(--accent)}
+.step b{font-size:15.5px}.step p{color:var(--ink-2);font-size:14px;margin-top:3px}
+
+/* compare */
+.compare{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:8px;margin-top:18px;display:grid;gap:6px}
+.crow{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;border-radius:12px}
+.crow .m{font-weight:600}
+.crow.best{background:var(--green-soft)}
+.crow.best .p{color:var(--green-ink,#008516);font-weight:800}
+.crow .p{font-weight:700}
+.tagbest{font-size:11px;font-weight:700;color:#008516;background:#fff;border-radius:6px;padding:2px 7px;margin-left:8px}
+
+/* CTA band */
+.cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--accent);
+  color:#fff;font-weight:700;font-size:17px;border:none;border-radius:13px;padding:17px 20px;
+  cursor:pointer;text-decoration:none;box-shadow:0 14px 26px -10px rgba(100,97,255,.55)}
+.band{background:linear-gradient(135deg,var(--p10),var(--p20));border-radius:var(--r-lg);
+  padding:26px 22px;text-align:center;margin-top:18px}
+.band .big{font-weight:800;font-size:30px;color:var(--accent)}
+
+/* FAQ */
+.faq{margin-top:14px;display:grid;gap:10px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+details summary{font-weight:700;font-size:15px;cursor:pointer;list-style:none;display:flex;
+  justify-content:space-between;gap:12px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";color:var(--accent);font-weight:800}
+details[open] summary::after{content:"–"}
+details p{color:var(--ink-2);font-size:14px;margin-top:10px}
+
+footer{padding:30px 0 46px;color:var(--ink-3);font-size:12.5px;border-top:1px solid var(--line);margin-top:20px}
+
+[data-r]{opacity:0;animation:rise .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+[data-r="1"]{animation-delay:.05s}[data-r="2"]{animation-delay:.13s}[data-r="3"]{animation-delay:.21s}
+@media(prefers-reduced-motion:reduce){[data-r]{animation:none;opacity:1}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap bar">
+  <span class="logo"><span class="mark">К</span>Кешбэк&nbsp;Браузер</span>
+  <button class="ghost">Попробовать</button>
+</div></header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero"><div class="wrap">
+    <div class="phone" data-r="1">
+      <div class="notif"><span class="ic"></span><span class="tx"><b>Начисление · Кешбэк Браузер</b><span>10 марта, 16:25</span></span><span class="amt">+200 ₽</span></div>
+      <div class="notif"><span class="ic"></span><span class="tx"><b>Начисление · Кешбэк Браузер</b><span>9 марта, 13:40</span></span><span class="amt">+150 ₽</span></div>
+      <div class="notif"><span class="ic"></span><span class="tx"><b>Начисление · пуш-уведомление</b><span>8 марта, 12:10</span></span><span class="amt">+150 ₽</span></div>
+    </div>
+    <h1 data-r="2">Возвращайте до 30% с каждой покупки на маркетплейсах</h1>
+    <p class="lead" data-r="2">Закупайтесь выгодно на WB, Ozon, Маркете и других площадках.</p>
+    <div class="stores" data-r="3">
+      <a class="store" href="#"><span class="g"></span> App Store</a>
+      <a class="store" href="#"><span class="g">▶</span> Google Play</a>
+    </div>
+    <p class="bonus" data-r="3"><b>+200 ₽</b> на первую покупку</p>
+  </div></section>
+
+  <!-- ASSISTANT -->
+  <section><div class="wrap">
+    <h2 class="h2">Ваш персональный шопинг-ассистент</h2>
+    <p class="lead">Сравнивай товары и цены между магазинами и пиши вопросы ИИ — прямо на странице товара.</p>
+    <div class="acard">
+      <div class="atabs"><span class="on">ozon</span><span>wb</span><span>Я.Маркет</span></div>
+      <div class="product">
+        <div class="thumb"><span class="aibadge">Ai</span></div>
+        <div class="pi"><b>Наушники, модель X</b><div class="stars">★★★★★ <small>4.8</small></div><div class="price">1 242 ₽</div></div>
+      </div>
+      <div class="bubbles">
+        <span class="bub">Плюсы и минусы этой модели?</span>
+        <span class="bub">Есть аналоги лучше?</span>
+        <span class="bub ai">Кратко по делу: основные пункты…</span>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- CATEGORY PILLS -->
+  <section><div class="wrap">
+    <h2 class="h2">Работает везде, где привыкли покупать</h2>
+    <p class="lead">Кешбэк на твоих площадках. % зависит от категории товара.</p>
+    <div class="pills">
+      <div class="pill ozon">OZON <span class="pc">до 3%</span></div>
+      <div class="pill wb">Wildberries <span class="pc">до 2,5%</span></div>
+      <div class="pill ym">Яндекс Маркет <span class="pc">до 2%</span></div>
+      <div class="pill lamoda">lamoda <span class="pc">до 4%</span></div>
+      <div class="pill mega">мегамаркет <span class="pc">до 2%</span></div>
+    </div>
+  </div></section>
+
+  <!-- 3 STEPS -->
+  <section><div class="wrap">
+    <h2 class="h2">Как покупать выгоднее <span style="color:var(--accent)">в 3 шага</span></h2>
+    <div class="steps">
+      <div class="step"><span class="num">1</span><div><b>Откройте маркетплейс</b><p>Через Кешбэк Браузер — Ozon, WB, Маркет.</p></div></div>
+      <div class="step"><span class="num">2</span><div><b>Выберите товар</b><p>ИИ сравнит варианты и подскажет по вашим критериям.</p></div></div>
+      <div class="step"><span class="num">3</span><div><b>Купите с кешбэком</b><p>Кешбэк начислится после получения заказа.</p></div></div>
+    </div>
+  </div></section>
+
+  <!-- COMPARE -->
+  <section><div class="wrap">
+    <h2 class="h2">Один товар. Разные площадки. Лучшая цена</h2>
+    <p class="lead">ИИ сравнит цену между магазинами и покажет, где выгоднее.</p>
+    <div class="compare">
+      <div class="crow"><span class="m">Ozon</span><span class="p">1 389 ₽</span></div>
+      <div class="crow best"><span class="m">Wildberries<span class="tagbest">дешевле</span></span><span class="p">1 242 ₽</span></div>
+      <div class="crow"><span class="m">Яндекс Маркет</span><span class="p">1 405 ₽</span></div>
+    </div>
+  </div></section>
+
+  <!-- AI vs FAKE REVIEWS -->
+  <section><div class="wrap">
+    <h2 class="h2">Нейросеть против заказных отзывов</h2>
+    <p class="lead">ИИ читает отзывы между строк, отсеивает накрутку и показывает честную картину товара и продавца.</p>
+    <div class="acard">
+      <div class="bubbles">
+        <span class="bub ai">Похоже на накрутку: 40% отзывов шаблонные</span>
+        <span class="bub">Продавец: 2 месяца, много возвратов</span>
+        <span class="bub">Совпадение с оригиналом: среднее</span>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- CTA / BONUS -->
+  <section><div class="wrap">
+    <div class="band">
+      <div class="big">+200 ₽</div>
+      <p class="lead" style="margin-top:6px">Бонус за первую покупку</p>
+      <a class="cta" href="#" style="margin-top:16px"><span></span> Попробовать</a>
+    </div>
+  </div></section>
+
+  <!-- FAQ -->
+  <section><div class="wrap">
+    <h2 class="h2">Частые вопросы</h2>
+    <div class="faq">
+      <details open><summary>Когда начислится кешбэк?</summary><p>После получения заказа и подтверждения площадкой. Статус виден в кошельке.</p></details>
+      <details><summary>Как вывести деньги?</summary><p>Кешбэк — рублями, вывод на карту. Порог и сроки покажем в приложении.</p></details>
+      <details><summary>На каких площадках работает?</summary><p>WB, Ozon, Яндекс Маркет, lamoda, мегамаркет и другие.</p></details>
+      <details><summary>Что умеет ИИ-ассистент?</summary><p>Сравнивает товары и цены, отвечает по странице, проверяет отзывы и продавца.</p></details>
+    </div>
+  </div></section>
+
+  <footer><div class="wrap">© 2025 Кешбэк Браузер</div></footer>
+</main>
+</body>
+</html>
