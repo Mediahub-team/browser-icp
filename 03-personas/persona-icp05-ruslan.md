@@ -1,4 +1,18 @@
+---
+type: persona
+stage: 3
+icp: "[[icp-05-deal-hunters]]"
+motive: C
+fit_ring: strong
+age: 28
+city: Ростов-на-Дону
+status: done
+tags: [stage/3, motive/C, fit/strong]
+---
+
 # Персона: Руслан, 28 — ICP-05 (Охотники за выгодой)
+
+**Источники:** [[icp-05-deal-hunters]] (этап 2).
 
 > Контраст к Татьяне: импульсивнее, ловит скидки/промокоды в каналах, менее дотошен к выплатам, ближе к Peripheral.
 

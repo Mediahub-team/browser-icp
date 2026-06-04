@@ -1,4 +1,18 @@
+---
+type: persona
+stage: 3
+icp: "[[icp-04-anxious-buyers]]"
+motive: S
+fit_ring: strong
+age: 37
+city: Краснодар
+status: done
+tags: [stage/3, motive/S, fit/strong]
+---
+
 # Персона: Сергей, 37 — ICP-04 (Тревожные покупатели)
+
+**Источники:** [[icp-04-anxious-buyers]] (этап 2).
 
 > Контраст к Ольге: осторожность вокруг дорогой электроники/техники, рациональный скепсис.
 

@@ -1,4 +1,16 @@
+---
+type: icp
+stage: 2
+motive: A
+fit_confidence: 72
+status: done
+source: "[[audience-hypotheses]]"
+tags: [stage/2, motive/A]
+---
+
 # ICP-03: Студенты и самообучающиеся
+
+**Источники:** [[audience-hypotheses]] (этап 1).
 
 > Мотив: **A** (ассистент для понимания/ресёрча), вторично **C** (бюджет/кешбэк). Источник: H3.
 

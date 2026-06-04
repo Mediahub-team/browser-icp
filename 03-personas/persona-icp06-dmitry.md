@@ -1,4 +1,18 @@
+---
+type: persona
+stage: 3
+icp: "[[icp-06-heavy-marketplace-buyers]]"
+motive: C
+fit_ring: strong
+age: 44
+city: Уфа
+status: done
+tags: [stage/3, motive/C, fit/strong]
+---
+
 # Персона: Дмитрий, 44 — ICP-06 (Частые покупатели МП)
+
+**Источники:** [[icp-06-heavy-marketplace-buyers]] (этап 2).
 
 > Контраст к Екатерине: технологичнее меньше, сильнее привязан к приложению Ozon, скептичен к «ещё одному приложению».
 

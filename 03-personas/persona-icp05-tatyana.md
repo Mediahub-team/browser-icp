@@ -1,4 +1,18 @@
+---
+type: persona
+stage: 3
+icp: "[[icp-05-deal-hunters]]"
+motive: C
+fit_ring: core
+age: 38
+city: Челябинск
+status: done
+tags: [stage/3, motive/C, fit/core]
+---
+
 # Персона: Татьяна, 38 — ICP-05 (Охотники за выгодой)
+
+**Источники:** [[icp-05-deal-hunters]] (этап 2).
 
 > «Ядерный» кешбэк-охотник, уже на Letyshops, дотошна к выплатам.
 

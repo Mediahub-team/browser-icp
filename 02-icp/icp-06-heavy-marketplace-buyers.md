@@ -1,4 +1,16 @@
+---
+type: icp
+stage: 2
+motive: C
+fit_confidence: 80
+status: done
+source: "[[audience-hypotheses]]"
+tags: [stage/2, motive/C]
+---
+
 # ICP-06: Частые покупатели маркетплейсов (heavy users Ozon/WB)
+
+**Источники:** [[audience-hypotheses]] (этап 1).
 
 > Мотив: **C + S** (кешбэк на объёме + уверенность/удобство). Источник: H7.
 

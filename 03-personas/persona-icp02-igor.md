@@ -1,4 +1,18 @@
+---
+type: persona
+stage: 3
+icp: "[[icp-02-content-readers]]"
+motive: A
+fit_ring: core
+age: 31
+city: Екатеринбург
+status: done
+tags: [stage/3, motive/A, fit/core]
+---
+
 # Персона: Игорь, 31 — ICP-02 (Контент-потребители)
+
+**Источники:** [[icp-02-content-readers]] (этап 2).
 
 > «Ядерный» инфо-перегруженный читатель Telegram/новостей.
 

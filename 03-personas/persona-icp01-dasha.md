@@ -1,4 +1,18 @@
+---
+type: persona
+stage: 3
+icp: "[[icp-01-ai-power-users]]"
+motive: A
+fit_ring: strong
+age: 34
+city: Санкт-Петербург
+status: done
+tags: [stage/3, motive/A, fit/strong]
+---
+
 # Персона: Даша, 34 — ICP-01 (AI-power-users)
+
+**Источники:** [[icp-01-ai-power-users]] (этап 2).
 
 > Развёртка ICP-01 в более избирательного, «прикладного» пользователя ИИ (контраст к Артёму).
 

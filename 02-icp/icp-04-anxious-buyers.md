@@ -1,4 +1,16 @@
+---
+type: icp
+stage: 2
+motive: S
+fit_confidence: 79
+status: done
+source: "[[audience-hypotheses]]"
+tags: [stage/2, motive/S]
+---
+
 # ICP-04: Тревожные / осторожные покупатели
+
+**Источники:** [[audience-hypotheses]] (этап 1).
 
 > Мотив: **S** (анти-обман / уверенность в выборе). Источник: H6.
 

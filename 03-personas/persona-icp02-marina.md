@@ -1,4 +1,18 @@
+---
+type: persona
+stage: 3
+icp: "[[icp-02-content-readers]]"
+motive: A
+fit_ring: strong
+age: 26
+city: Казань
+status: done
+tags: [stage/3, motive/A, fit/strong]
+---
+
 # Персона: Марина, 26 — ICP-02 (Контент-потребители)
+
+**Источники:** [[icp-02-content-readers]] (этап 2).
 
 > Контраст к Игорю: читает не каналы, а новости/Дзен/лонгриды, менее техно-продвинута.
 
