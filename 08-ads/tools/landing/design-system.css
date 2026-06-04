@@ -9,9 +9,9 @@
    ============================================================ */
 
 :root {
-  /* Фон — светлый прохладный с лёгким лиловым подтоном (как в макете) */
-  --bg:        #F4F4FA;
-  --bg-tint:   #FBFBFE;
+  /* Фон — нейтральный светлый (сэмплировано из макета: #F8F8F8) */
+  --bg:        #F8F8F8;
+  --bg-tint:   #FFFFFF;
   --card:      #FFFFFF;
 
   /* Текст */
@@ -20,16 +20,17 @@
   --ink-3:     #8C8C9C;
   --line:      rgba(14, 14, 22, 0.08);
 
-  /* Бренд: индиго-синий (логотип, CTA) */
-  --accent:      #2E2BE6;
-  --accent-ink:  #1B1A9E;
-  --accent-soft: #E9E8FD;
+  /* Бренд-синий (сэмплировано: барвинок #6461FF → азур #005DFF, CTA — градиент) */
+  --accent:      #6461FF;
+  --accent-2:    #2F5BFF;
+  --accent-ink:  #3A37C9;
+  --accent-soft: #ECEBFF;
   --on-accent:   #FFFFFF;
 
-  /* AI-акцент: зелёный (бейдж «Ai», «нейросеть против отзывов») */
-  --ai:        #15B877;
-  --ai-ink:    #0B7A4E;
-  --ai-soft:   #E2F6EE;
+  /* AI-акцент: свежий зелёный (сэмплировано: #49C15A–#5CC56E) */
+  --ai:        #3FBF5C;
+  --ai-ink:    #1E8E40;
+  --ai-soft:   #E6F7EA;
 
   /* Статус-вердикт товара (S) */
   --ok:   #15B877;
@@ -42,7 +43,7 @@
   --maxw: 440px;
   --pad:  20px;
   --shadow: 0 8px 28px rgba(20, 20, 60, 0.07);
-  --shadow-cta: 0 10px 22px rgba(46, 43, 230, 0.28);
+  --shadow-cta: 0 10px 22px rgba(100, 97, 255, 0.30);
 }
 
 * { box-sizing: border-box; }
@@ -53,7 +54,7 @@ body {
   font-family: var(--font);
   color: var(--ink);
   background:
-    radial-gradient(120% 60% at 50% -10%, var(--accent-soft) 0%, rgba(233,232,253,0) 55%),
+    radial-gradient(130% 55% at 50% -12%, var(--accent-soft) 0%, rgba(236,235,255,0) 50%),
     var(--bg);
   background-attachment: fixed;
   line-height: 1.45;
@@ -94,7 +95,8 @@ section { padding: 38px 0; }
 /* --- CTA — синяя кнопка-пилюля с мягкой тенью --- */
 .cta {
   display: block; width: 100%; text-align: center;
-  background: var(--accent); color: var(--on-accent);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  color: var(--on-accent);
   font-family: var(--font); font-weight: 700; font-size: 17px;
   border: none; border-radius: 16px; padding: 18px 20px;
   cursor: pointer; text-decoration: none;
