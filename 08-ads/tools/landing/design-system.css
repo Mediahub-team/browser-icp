@@ -1,0 +1,181 @@
+/* ============================================================
+   Кэшбэк Браузер — дизайн-система лендингов (по бренду из Figma)
+   Mobile-first. Яркий дружелюбный fintech-consumer, но чисто и
+   конверсионно — без генерик-AI-вида.
+   Бренд: индиго-синий (первичный) + зелёный AI-акцент, светлый
+   прохладный фон, белые скруглённые карточки с мягкой тенью.
+   Шрифт: Golos Text (RU, геометрик, полная кириллица).
+   Токены сверены по PNG-экспорту лендинга; точные hex правятся тут.
+   ============================================================ */
+
+:root {
+  /* Фон — светлый прохладный с лёгким лиловым подтоном (как в макете) */
+  --bg:        #F4F4FA;
+  --bg-tint:   #FBFBFE;
+  --card:      #FFFFFF;
+
+  /* Текст */
+  --ink:       #0E0E16;
+  --ink-2:     #3C3C49;
+  --ink-3:     #8C8C9C;
+  --line:      rgba(14, 14, 22, 0.08);
+
+  /* Бренд: индиго-синий (логотип, CTA) */
+  --accent:      #2E2BE6;
+  --accent-ink:  #1B1A9E;
+  --accent-soft: #E9E8FD;
+  --on-accent:   #FFFFFF;
+
+  /* AI-акцент: зелёный (бейдж «Ai», «нейросеть против отзывов») */
+  --ai:        #15B877;
+  --ai-ink:    #0B7A4E;
+  --ai-soft:   #E2F6EE;
+
+  /* Статус-вердикт товара (S) */
+  --ok:   #15B877;
+  --warn: #E8732A;
+
+  --font: "Golos Text", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --r:    20px;        /* крупное скругление карточек — как в бренде */
+  --r-sm: 13px;
+  --maxw: 440px;
+  --pad:  20px;
+  --shadow: 0 8px 28px rgba(20, 20, 60, 0.07);
+  --shadow-cta: 0 10px 22px rgba(46, 43, 230, 0.28);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background:
+    radial-gradient(120% 60% at 50% -10%, var(--accent-soft) 0%, rgba(233,232,253,0) 55%),
+    var(--bg);
+  background-attachment: fixed;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+img, svg { max-width: 100%; }
+.cta { overflow-wrap: anywhere; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); }
+
+/* --- Бейдж-надстрочник (вместо mono — мягкая бренд-пилюля) --- */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 13px; font-weight: 600; color: var(--accent-ink);
+  background: var(--accent-soft); border-radius: 999px; padding: 7px 13px;
+}
+.eyebrow::before {
+  content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ai);
+}
+
+/* --- Типографика — жирные геометрик-заголовки --- */
+h1 {
+  font-weight: 800;
+  font-size: clamp(29px, 8vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 18px 0 0;
+  text-wrap: balance;
+}
+.lead { font-size: 17px; color: var(--ink-2); margin: 13px 0 0; }
+h2 { font-weight: 700; font-size: 22px; letter-spacing: -0.01em; margin: 0 0 16px; }
+
+section { padding: 38px 0; }
+.hero { padding: 30px 0 30px; }
+
+/* --- CTA — синяя кнопка-пилюля с мягкой тенью --- */
+.cta {
+  display: block; width: 100%; text-align: center;
+  background: var(--accent); color: var(--on-accent);
+  font-family: var(--font); font-weight: 700; font-size: 17px;
+  border: none; border-radius: 16px; padding: 18px 20px;
+  cursor: pointer; text-decoration: none;
+  box-shadow: var(--shadow-cta);
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+.cta:active { transform: translateY(1px) scale(.995); filter: brightness(.97); }
+.cta-note { font-size: 13px; color: var(--ink-3); text-align: center; margin: 10px 0 0; }
+
+/* --- Буллеты — белые карточки с мягкой тенью --- */
+.bullets { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.bullet {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--r);
+  padding: 18px 18px 18px 56px; position: relative; box-shadow: var(--shadow);
+}
+.bullet::before {
+  content: ""; position: absolute; left: 18px; top: 19px;
+  width: 24px; height: 24px; border-radius: 8px;
+  background: var(--ai-soft); box-shadow: inset 0 0 0 2px var(--ai);
+}
+.bullet b { display: block; font-weight: 700; font-size: 16px; }
+.bullet span { font-size: 14px; color: var(--ink-2); }
+
+/* --- Демо «вердикт товара» (AI-проверка — ядро S-угла) --- */
+.demo {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--r);
+  padding: 20px; display: grid; gap: 13px; box-shadow: var(--shadow);
+}
+.verdict { display: flex; align-items: center; gap: 10px; font-size: 14.5px; color: var(--ink-2); }
+.chip {
+  font-size: 13px; font-weight: 700; padding: 5px 11px; border-radius: 999px;
+}
+.chip.ok   { background: var(--ai-soft); color: var(--ai-ink); }
+.chip.warn { background: #FBE9DC; color: var(--warn); }
+.demo-row { display: flex; align-items: center; justify-content: space-between; font-size: 13.5px; color: var(--ink-2); gap: 12px; }
+.demo-row .bar { flex: 0 0 84px; height: 7px; background: #ECECF3; border-radius: 99px; overflow: hidden; }
+.demo-row .bar i { display: block; height: 100%; background: var(--warn); border-radius: 99px; }
+
+/* --- AI-бейдж (как зелёный «Ai» в макете) --- */
+.ai-badge {
+  display: inline-flex; align-items: center; gap: 6px; font-weight: 700; font-size: 13px;
+  color: var(--ai-ink); background: var(--ai-soft); border-radius: 999px; padding: 5px 11px;
+}
+
+/* --- Форма waitlist + intent --- */
+.form { display: grid; gap: 11px; }
+.form input[type="email"] {
+  font-family: var(--font); font-size: 16px; color: var(--ink);
+  background: var(--card); border: 1.5px solid var(--line);
+  border-radius: 14px; padding: 17px; width: 100%;
+}
+.form input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+
+.intent { display: none; }
+.intent.show { display: block; animation: rise .4s ease both; }
+.intent .q { font-size: 14.5px; color: var(--ink-2); margin: 0 0 10px; }
+.opts { display: grid; gap: 8px; margin: 0 0 14px; }
+.opt {
+  border: 1.5px solid var(--line); border-radius: var(--r-sm); padding: 13px 15px;
+  font-size: 14.5px; font-family: var(--font); background: var(--card); cursor: pointer; text-align: left;
+}
+.opt[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent-ink); font-weight: 600; }
+.commit { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; color: var(--ink-2); }
+.commit input { margin-top: 2px; }
+.thanks { display: none; font-size: 15px; font-weight: 600; color: var(--ai-ink);
+  background: var(--ai-soft); border-radius: 14px; padding: 16px; }
+.thanks.show { display: block; animation: rise .4s ease both; }
+
+/* --- Мелочи / соц.док --- */
+.fine { font-size: 12.5px; color: var(--ink-3); margin: 0; }
+.proof { display: grid; gap: 10px; }
+.proof q { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-sm);
+  padding: 14px 16px; font-size: 14px; color: var(--ink-2); box-shadow: var(--shadow);
+  quotes: "«" "»"; display: block; }
+footer { padding: 28px 0 46px; color: var(--ink-3); font-size: 12.5px; }
+
+/* --- Появление при загрузке (один оркестрированный момент) --- */
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+[data-rise] { opacity: 0; animation: rise .55s cubic-bezier(.2,.7,.2,1) both; }
+[data-rise="1"] { animation-delay: .05s; }
+[data-rise="2"] { animation-delay: .13s; }
+[data-rise="3"] { animation-delay: .21s; }
+[data-rise="4"] { animation-delay: .29s; }
+@media (prefers-reduced-motion: reduce) { [data-rise] { animation: none; opacity: 1; } }
