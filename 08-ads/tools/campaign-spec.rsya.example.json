@@ -1,0 +1,39 @@
+{
+  "note": "ПРИМЕР: РСЯ (сеть) для ICP-04 (S). network=rsya -> Search SERVING_OFF. На РСЯ ключи = контекстный таргетинг, бьём по интересу/поведению; рекомендуется картинка (image_hash из adimages_add). Эмоциональные крючки шире, чем на Поиске.",
+  "campaign": {
+    "name": "ICP04-S-RSYA-waitlist",
+    "network": "rsya",
+    "weekly_budget_rub": 5000,
+    "regions": [225],
+    "negative_keywords": ["бесплатно", "опт", "работа"]
+  },
+  "adgroups": [
+    {
+      "name": "F1 anti-fake (network)",
+      "keywords": [
+        "маркетплейс подделка",
+        "проверка товара перед покупкой",
+        "надёжный продавец озон"
+      ],
+      "ads": [
+        {
+          "title": "Один раз обожглась — теперь проверяю",
+          "title2": "ИИ оценит товар",
+          "text": "Пришла подделка? ИИ проверит продавца и отзывы до покупки. Лист ожидания.",
+          "href": "https://browser-icp.example/lp/proverka?utm_source=yandex&utm_medium=cpm&utm_campaign=icp04_rsya&utm_content=o1a",
+          "display_path": "proverka",
+          "image_hash": null,
+          "_image_note": "Загрузить картинку через Services.adimages_add -> подставить AdImageHash"
+        },
+        {
+          "title": "Отзывам не верю — половина куплена",
+          "title2": "Покажем, чему верить",
+          "text": "ИИ разберёт отзывы и продавца, покажет риск подделки. Запишись первым.",
+          "href": "https://browser-icp.example/lp/proverka?utm_source=yandex&utm_medium=cpm&utm_campaign=icp04_rsya&utm_content=o1b",
+          "display_path": "proverka",
+          "image_hash": null
+        }
+      ]
+    }
+  ]
+}

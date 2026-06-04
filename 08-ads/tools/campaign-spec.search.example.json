@@ -1,0 +1,37 @@
+{
+  "note": "ПРИМЕР: контекст/Поиск для ICP-04 (S). network=search -> Network SERVING_OFF. Ключи = горячий search-intent. Проверка: build_campaign.py --spec этот --validate-only",
+  "campaign": {
+    "name": "ICP04-S-Search-waitlist",
+    "network": "search",
+    "weekly_budget_rub": 7000,
+    "regions": [225],
+    "negative_keywords": ["бесплатно", "опт", "работа", "вакансия", "letyshops", "промокод"]
+  },
+  "adgroups": [
+    {
+      "name": "F1 anti-fake",
+      "keywords": [
+        "как отличить подделку",
+        "как проверить продавца ozon",
+        "оригинал или подделка как проверить",
+        "проверить отзывы на накрутку"
+      ],
+      "ads": [
+        {
+          "title": "Проверь товар до покупки",
+          "title2": "ИИ оценит продавца",
+          "text": "ИИ проверит продавца и риск подделки за секунды. Запишись в лист ожидания.",
+          "href": "https://browser-icp.example/lp/proverka?utm_source=yandex&utm_medium=cpc&utm_campaign=icp04_search&utm_content=o1a",
+          "display_path": "proverka"
+        },
+        {
+          "title": "А вдруг подделка? Проверь товар",
+          "title2": "Честный вердикт за 2 сек",
+          "text": "Сомневаешься в товаре? ИИ оценит продавца и отзывы. Лист ожидания открыт.",
+          "href": "https://browser-icp.example/lp/proverka?utm_source=yandex&utm_medium=cpc&utm_campaign=icp04_search&utm_content=o1b",
+          "display_path": "proverka"
+        }
+      ]
+    }
+  ]
+}

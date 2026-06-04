@@ -36,7 +36,7 @@ tags: [meta, obsidian, vault]
 
 ```yaml
 ---
-type: product|hypothesis|icp|persona|guide|run|analysis|offer|targeting|result|reference|template
+type: product|hypothesis|icp|persona|guide|run|analysis|offer|targeting|creative|landing|test-plan|result|reference|template
 stage: 0            # номер этапа 0–9 (или meta)
 status: draft|untested|validated|done
 tags: [stage/N, motive/A]
