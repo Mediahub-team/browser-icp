@@ -3,6 +3,8 @@
 # Obsidian — волатильное (конфиг app/core/community коммитим, остальное нет)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+.obsidian/graph.json
+.obsidian/hotkeys.json
 .obsidian/cache
 .obsidian/plugins/
 .obsidian/themes/
