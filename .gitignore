@@ -1,5 +1,16 @@
 .DS_Store
 
+# Секреты (токены API) — никогда не коммитим
+.env
+08-ads/tools/.env
+
+# Python байткод
+__pycache__/
+*.pyc
+
+# Сгенерированные артефакты тулзов (регенерируются скриптами)
+08-ads/tools/*/build/
+
 # Obsidian — волатильное (конфиг app/core/community коммитим, остальное нет)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
