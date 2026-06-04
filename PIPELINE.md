@@ -16,7 +16,7 @@
 | 4 | Сценарии интервью | `04-interviews/` | ✅ | `custdev/` ×2, `problem/` ×2 | custdev: v1 короткий (acquisition, ~10м), v2 глубокий (value/adoption/WTP, ~30м); problem: v1 под мотив A (чтение/ресёрч), v2 под S/C (доверие к товару/экономия). Six-pillar, смешанные форматы, не наводящие |
 | 5 | Прогон интервью | `05-simulations/` | 🔄 | `run-*/` | **2 прогона (40 респ. каждый, одни ID):** `run-custdev-v2` (с демо) + `run-problem` (Mom Test, без демо). Оба собраны на ветке `s4/guide-problem-first` для калибровки. На `main` пока ⬜ |
 | 6 | Анализ | `06-analysis/` | 🔄 | `analysis-*.md` | **`s4/guide-custdev-first`:** `analysis-2026-06-04.md` (pillar-скоринг ×6 ICP, ранг, messaging). **`s4/guide-problem-first`:** `comparison-custdev-vs-problem-2026-06-04.md` — калибровка: S(04) подтверждён, A-power(01) завышен демо (4.2→2.8), C — не боль. На `main` ⬜ |
-| 7 | Офферы | `07-offers/` | 🔄 | `offers-matrix.md` | **Ветка `s4/guide-problem-first`:** 5 карточек + `offers-matrix.md` (12 офферов O1–O12) на откалиброванном ранге. Высокий: O1–O8 (S+A); O9/O10 (AI-power) низкий/эксперимент; O11/O12 (C) 🔒 GATED до готовности вывода. На `main` ⬜ |
+| 7 | Офферы | `07-offers/` | 🔄 | `offers-matrix.md` | **Ветка `s4/guide-problem-first`:** 5 карточек + `offers-matrix.md` (O1–O12) + ре-чек под пред-продуктовый лендинг-тест. Метрика = заявка в лист ожидания; фокус O1–O5 (S+A); кешбэк раз-блокирован как обучающая ячейка (дисконт интента); решение по `заявки×качество интента`. На `main` ⬜ |
 | 8 | Таргетинг и реклама | `08-ads/` | ⬜ | `targeting/`, `creatives/`, `test-plan.md` | — |
 | 9 | Результаты | `09-results/` | ⬜ | `results-*.md` | — |
 

@@ -4,8 +4,10 @@ stage: 7
 segment: ["[[icp-05-deal-hunters]]", "[[icp-06-heavy-marketplace-buyers]]"]
 motive: C
 sources: ["[[comparison-custdev-vs-problem-2026-06-04]]"]
-status: gated
-tags: [stage/7, offer, motive/C, gated]
+status: untested
+landing_test: ok-no-payment
+launch_caveat: honor-at-launch (без связывающих цифр на лендинге)
+tags: [stage/7, offer, motive/C, landing-test]
 ---
 
 # Офферы — «Кэшбэк Браузер», мотив C (доверие к выплате)
