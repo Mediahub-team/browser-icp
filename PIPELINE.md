@@ -15,7 +15,7 @@
 | 3 | Портреты пользователей | `03-personas/` | ✅ | `persona-icp01…06-*.md` | 12 персон (2 на ICP, с вариативностью и fit-кольцами): 01 Артём/Даша · 02 Игорь/Марина · 03 Никита/Алина · 04 Ольга/Сергей · 05 Татьяна/Руслан · 06 Екатерина/Дмитрий. Каждая по 8 B2C-компонентам + отношение к продукту + цитаты. Готовы как роли для интервью |
 | 4 | Сценарии интервью | `04-interviews/` | ✅ | `custdev/` ×2, `problem/` ×2 | custdev: v1 короткий (acquisition, ~10м), v2 глубокий (value/adoption/WTP, ~30м); problem: v1 под мотив A (чтение/ресёрч), v2 под S/C (доверие к товару/экономия). Six-pillar, смешанные форматы, не наводящие |
 | 5 | Прогон интервью | `05-simulations/` | 🔄 | `run-*/` | **Ветка `s4/guide-custdev-first`:** прогон `run-custdev-v2-2026-06-04` — 40 респондентов (Core 16/Strong 12/Periph 8/Non-ICP 4) на custdev v2. Транскрипты + сводка + 7 находок. На `main` пока ⬜ |
-| 6 | Анализ | `06-analysis/` | ⬜ | `analysis-*.md` | — |
+| 6 | Анализ | `06-analysis/` | 🔄 | `analysis-*.md` | **Ветка `s4/guide-custdev-first`:** `analysis-2026-06-04.md` — pillar-скоринг ×6 ICP, кросс-паттерны, темы, validated/untested, ранг ICP, messaging-углы, каналы, exec summary. Первичные: 04 (S) + 02 (A). На `main` ⬜ |
 | 7 | Офферы | `07-offers/` | ⬜ | `offers-matrix.md` | — |
 | 8 | Таргетинг и реклама | `08-ads/` | ⬜ | `targeting/`, `creatives/`, `test-plan.md` | — |
 | 9 | Результаты | `09-results/` | ⬜ | `results-*.md` | — |
