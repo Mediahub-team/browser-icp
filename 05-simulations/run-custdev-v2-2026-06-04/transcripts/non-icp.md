@@ -1,3 +1,12 @@
+---
+type: run
+stage: 5
+batch: non-icp
+part_of: "[[summary]]"
+guide: "[[guide-v2-deep-value-adoption]]"
+tags: [stage/5, run]
+---
+
 # Non-ICP (контроль) — батч 4 респондента · custdev v2 (six-pillar)
 
 > Контроль/контраст: заведомо НЕ наша аудитория. Ответы — отказы, непонимание ценности, отсутствие боли. Likert по P1/P3/P4/P5 ожидаемо низкие. Сравнивать с Core.

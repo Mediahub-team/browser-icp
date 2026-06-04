@@ -1,3 +1,13 @@
+---
+type: run
+stage: 5
+batch: strong-a
+part_of: "[[summary]]"
+guide: "[[guide-v2-deep-value-adoption]]"
+personas: ["[[persona-icp01-dasha]]", "[[persona-icp02-marina]]", "[[persona-icp03-alina]]"]
+tags: [stage/5, run]
+---
+
 # Транскрипты — Strong-кольцо, мотив A (S01–S06)
 
 > Прогон custdev v2 (глубокий, six-pillar). Ответы от первого лица.

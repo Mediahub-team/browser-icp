@@ -1,3 +1,13 @@
+---
+type: run
+stage: 5
+batch: peripheral
+part_of: "[[summary]]"
+guide: "[[guide-v2-deep-value-adoption]]"
+icp_edges: ["[[icp-01-ai-power-users]]", "[[icp-02-content-readers]]", "[[icp-03-students]]", "[[icp-04-anxious-buyers]]", "[[icp-05-deal-hunters]]", "[[icp-06-heavy-marketplace-buyers]]"]
+tags: [stage/5, run]
+---
+
 # Custdev v2 — Peripheral-кольцо (краевые случаи, слабый fit)
 
 > Батч: 8 респондентов, край ICP / общий edge. Повышенный скепсис, слабая боль, сильная инерция. Ожидаемо много «нет / не сейчас».

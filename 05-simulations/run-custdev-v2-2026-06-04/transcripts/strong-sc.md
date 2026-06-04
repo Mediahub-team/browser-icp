@@ -1,3 +1,13 @@
+---
+type: run
+stage: 5
+batch: strong-sc
+part_of: "[[summary]]"
+guide: "[[guide-v2-deep-value-adoption]]"
+personas: ["[[persona-icp04-sergey]]", "[[persona-icp06-dmitry]]", "[[persona-icp05-ruslan]]"]
+tags: [stage/5, run]
+---
+
 # Транскрипты — Strong-кольцо, мотивы S и C (батч strong-sc)
 
 > Гайд: custdev v2 (глубокий, six-pillar), от первого лица. Likert 1–5.

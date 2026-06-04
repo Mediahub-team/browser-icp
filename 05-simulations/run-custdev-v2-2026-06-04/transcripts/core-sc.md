@@ -1,3 +1,13 @@
+---
+type: run
+stage: 5
+batch: core-sc
+part_of: "[[summary]]"
+guide: "[[guide-v2-deep-value-adoption]]"
+personas: ["[[persona-icp04-olga]]", "[[persona-icp05-tatyana]]", "[[persona-icp06-ekaterina]]"]
+tags: [stage/5, run]
+---
+
 # Транскрипты — Core, мотивы S и C (C09–C16)
 
 > Прогон custdev v2 (глубокий, six-pillar). Батч: 8 респондентов Core-кольца.

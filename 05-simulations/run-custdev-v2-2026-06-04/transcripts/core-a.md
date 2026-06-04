@@ -1,3 +1,13 @@
+---
+type: run
+stage: 5
+batch: core-a
+part_of: "[[summary]]"
+guide: "[[guide-v2-deep-value-adoption]]"
+personas: ["[[persona-icp01-artem]]", "[[persona-icp02-igor]]", "[[persona-icp03-nikita]]"]
+tags: [stage/5, run]
+---
+
 # Транскрипты — Core / мотив A (ИИ-ассистент: эффективность чтения и ресёрча)
 
 > Прогон custdev v2 (глубокий, six-pillar). 8 респондентов C01–C08, кольцо Core, ведущий мотив A.
