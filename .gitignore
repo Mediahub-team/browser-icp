@@ -8,6 +8,11 @@
 __pycache__/
 *.pyc
 
+# Node (лендинг-app)
+node_modules/
+dist/
+.vite/
+
 # Сгенерированные артефакты тулзов (регенерируются скриптами)
 08-ads/tools/*/build/
 
