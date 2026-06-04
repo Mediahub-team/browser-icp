@@ -2810,7 +2810,7 @@ function MaskGroup1() {
 
 function Image5() {
   return (
-    <div className="h-[187px] max-w-[403.8114929199219px] min-w-[334px] relative rounded-[6.844px] shrink-0 w-[334px]" data-name="Image">
+    <div className="h-[187px] relative rounded-[6.844px] shrink-0 w-full max-w-[334px]" data-name="Image">
       <Frame49 />
       <MaskGroup1 />
     </div>
@@ -2819,9 +2819,8 @@ function Image5() {
 
 function Photo5() {
   return (
-    <div className="content-center flex flex-wrap gap-y-[48px] items-center justify-between min-w-[334px] relative shrink-0 w-full" data-name="Photo">
+    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Photo">
       <Name6 />
-      <div className="bg-[rgba(217,217,217,0)] h-[20px] relative shrink-0 w-[40px]" data-name="Stopper (для корректного изменения размера блока)" />
       <Image5 />
     </div>
   );
