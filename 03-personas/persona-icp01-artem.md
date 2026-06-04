@@ -1,4 +1,18 @@
+---
+type: persona
+stage: 3
+icp: "[[icp-01-ai-power-users]]"
+motive: A
+fit_ring: core
+age: 29
+city: Москва
+status: done
+tags: [stage/3, motive/A, fit/core]
+---
+
 # Персона: Артём, 29 — ICP-01 (AI-power-users)
+
+**Источники:** [[icp-01-ai-power-users]] (этап 2).
 
 > Развёртка ICP-01 в «ядерного» раннего адоптора. Используется как роль в синтетических интервью.
 

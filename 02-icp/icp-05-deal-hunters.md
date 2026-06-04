@@ -1,4 +1,16 @@
+---
+type: icp
+stage: 2
+motive: C
+fit_confidence: 82
+status: done
+source: "[[audience-hypotheses]]"
+tags: [stage/2, motive/C]
+---
+
 # ICP-05: Охотники за выгодой / экономные покупатели
+
+**Источники:** [[audience-hypotheses]] (этап 1).
 
 > Мотив: **C** (кешбэк / экономия). Источник: H5.
 

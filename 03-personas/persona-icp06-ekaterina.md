@@ -1,4 +1,18 @@
+---
+type: persona
+stage: 3
+icp: "[[icp-06-heavy-marketplace-buyers]]"
+motive: C
+fit_ring: core
+age: 35
+city: Нижний Новгород
+status: done
+tags: [stage/3, motive/C, fit/core]
+---
+
 # Персона: Екатерина, 35 — ICP-06 (Частые покупатели МП)
+
+**Источники:** [[icp-06-heavy-marketplace-buyers]] (этап 2).
 
 > «Ядерный» heavy-user: еженедельные заказы на семью, максимальный LTV-потенциал.
 

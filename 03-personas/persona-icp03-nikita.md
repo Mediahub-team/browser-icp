@@ -1,4 +1,18 @@
+---
+type: persona
+stage: 3
+icp: "[[icp-03-students]]"
+motive: A
+fit_ring: core
+age: 19
+city: Новосибирск
+status: done
+tags: [stage/3, motive/A, fit/core]
+---
+
 # Персона: Никита, 19 — ICP-03 (Студенты)
+
+**Источники:** [[icp-03-students]] (этап 2).
 
 > «Ядерный» студент-технарь с тонким бюджетом, на бесплатном ChatGPT.
 

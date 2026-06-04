@@ -1,4 +1,18 @@
+---
+type: persona
+stage: 3
+icp: "[[icp-04-anxious-buyers]]"
+motive: S
+fit_ring: core
+age: 42
+city: Самара
+status: done
+tags: [stage/3, motive/S, fit/core]
+---
+
 # Персона: Ольга, 42 — ICP-04 (Тревожные покупатели)
+
+**Источники:** [[icp-04-anxious-buyers]] (этап 2).
 
 > «Ядерный» осторожный покупатель, обжигалась на подделке, закупает на семью/быт.
 

@@ -1,4 +1,16 @@
+---
+type: icp
+stage: 2
+motive: A
+fit_confidence: 76
+status: done
+source: "[[audience-hypotheses]]"
+tags: [stage/2, motive/A]
+---
+
 # ICP-02: Контент-потребители / читатели на ходу
+
+**Источники:** [[audience-hypotheses]] (этап 1).
 
 > Мотив: **A** (универсальный ассистент, угол «дай суть»). Источник: H2.
 

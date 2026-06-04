@@ -1,4 +1,16 @@
+---
+type: icp
+stage: 2
+motive: A
+fit_confidence: 78
+status: done
+source: "[[audience-hypotheses]]"
+tags: [stage/2, motive/A]
+---
+
 # ICP-01: AI-power-users / ранние адопторы ИИ
+
+**Источники:** [[audience-hypotheses]] (этап 1).
 
 > Мотив: **A** (универсальный ассистент). Источник: H1.
 

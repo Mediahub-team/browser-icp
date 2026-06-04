@@ -1,4 +1,18 @@
+---
+type: persona
+stage: 3
+icp: "[[icp-03-students]]"
+motive: A
+fit_ring: strong
+age: 22
+city: Воронеж
+status: done
+tags: [stage/3, motive/A, fit/strong]
+---
+
 # Персона: Алина, 22 — ICP-03 (Студенты)
+
+**Источники:** [[icp-03-students]] (этап 2).
 
 > Контраст к Никите: гуманитарий-выпускница с подработкой, больше про ресёрч/тексты и осознанные покупки.
 
