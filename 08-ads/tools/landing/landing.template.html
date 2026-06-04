@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{TITLE}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+{{CSS}}
+</style>
+</head>
+<body data-tone="{{TONE}}">
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow" data-rise="1">{{EYEBROW}}</p>
+    <h1 data-rise="2">{{H1}}</h1>
+    <p class="lead" data-rise="3">{{LEAD}}</p>
+    <div data-rise="4" style="margin-top:24px">
+      <a href="#join" class="cta">{{CTA}}</a>
+      <p class="cta-note">{{CTA_NOTE}}</p>
+    </div>
+  </section>
+
+  {{DEMO}}
+
+  <section>
+    <h2>Что это даёт</h2>
+    <ul class="bullets">
+{{BULLETS}}
+    </ul>
+  </section>
+
+  <section id="join">
+    <h2>Ранний доступ</h2>
+    <form class="form" id="waitlist" novalidate>
+      <input type="email" name="email" placeholder="Ваш e-mail" required autocomplete="email">
+      <button class="cta" type="submit">{{CTA}}</button>
+      <p class="cta-note">{{FINE}}</p>
+    </form>
+
+    <div class="intent" id="intent">
+      <p class="q">{{INTENT_Q}}</p>
+      <div class="opts" role="group">
+{{OPTS}}
+      </div>
+      <label class="commit">
+        <input type="checkbox" name="first"> {{COMMIT}}
+      </label>
+      <button class="cta" id="intent-done" style="margin-top:14px">Готово</button>
+    </div>
+
+    <p class="thanks" id="thanks">Спасибо — вы в листе ожидания. Напишем, как откроем доступ.</p>
+  </section>
+
+  {{PROOF}}
+
+  <footer class="wrap">{{FOOT}}</footer>
+</main>
+
+<script>
+(function(){
+  var form = document.getElementById('waitlist');
+  var intent = document.getElementById('intent');
+  var thanks = document.getElementById('thanks');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!form.email.value || form.email.value.indexOf('@') < 0){ form.email.focus(); return; }
+    // здесь будет отправка + цель Метрики «waitlist_signup» (заглушка для теста)
+    form.style.display = 'none';
+    intent.classList.add('show');
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('.opt'), function(b){
+    b.addEventListener('click', function(){
+      b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+    });
+  });
+  var done = document.getElementById('intent-done');
+  if(done) done.addEventListener('click', function(){ intent.classList.remove('show'); thanks.classList.add('show'); });
+})();
+</script>
+</body>
+</html>
