@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ИИ видит открытую страницу — Кешбэк Браузер</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#000B21; --ink-2:#666D7A; --ink-3:#9AA0AC;
+  --accent:#6461FF; --accent-2:#4F4BE6; --accent-ink:#3B38C7;
+  --p10:#EFEFFF; --p20:#E0DFFF; --green:#00B81F; --green-soft:#E0F8E4;
+  --bg:#F6F6FA; --card:#FFFFFF; --night:#0E1430;
+  --line:rgba(0,11,33,.09);
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --sans:"Manrope",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);
+  line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:430px;margin:0 auto;padding:0 22px}
+a{color:inherit}
+
+/* header — настоящий логотип-локап, без пилюли-с-точкой */
+header{position:sticky;top:0;z-index:9;background:rgba(246,246,250,.82);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:700;font-size:15px}
+.mark{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;
+  background:linear-gradient(135deg,#238FFA,#6461FF);color:#fff;font-weight:800;font-size:16px;
+  box-shadow:0 4px 12px rgba(100,97,255,.35)}
+.os{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.04em}
+
+/* hero */
+.hero{padding:34px 0 6px}
+.kicker{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--accent)}
+h1{font-weight:800;font-size:clamp(32px,9.5vw,42px);line-height:1.04;letter-spacing:-.03em;
+  margin:14px 0 0}
+h1 .hl{color:var(--accent)}
+.sub{font-size:17px;color:var(--ink-2);margin:16px 0 0;max-width:30ch}
+
+/* hero-мокап браузера: вкладки + страница + ИИ-панель «читает» страницу */
+.demo{margin:26px 0 0;background:var(--card);border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 20px 50px -24px rgba(20,20,70,.35);overflow:hidden}
+.tabs{display:flex;gap:6px;padding:10px 10px 0;background:#F2F2F8}
+.tab{font-family:var(--mono);font-size:11px;color:var(--ink-3);padding:7px 10px;border-radius:8px 8px 0 0;
+  white-space:nowrap;max-width:96px;overflow:hidden;text-overflow:ellipsis}
+.tab.on{background:var(--card);color:var(--ink);font-weight:600}
+.page{padding:14px 14px 16px;display:grid;gap:7px;position:relative}
+.ln{height:8px;border-radius:99px;background:#EDEDF3}
+.ln.sel{background:var(--p20);box-shadow:0 0 0 2px var(--accent)}
+.aipanel{margin:10px 14px 14px;background:var(--night);color:#EAEBFF;border-radius:12px;padding:13px 14px}
+.aip-h{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:#A7AAFF}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+.aip-b{font-size:13.5px;margin:8px 0 0;color:#EAEBFF}
+.aip-b b{color:#fff}
+.nocopy{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-align:center;padding:0 0 12px}
+
+/* CTA */
+.cta{display:block;width:100%;text-align:center;background:var(--accent);color:#fff;
+  font-family:var(--sans);font-weight:700;font-size:17px;border:none;border-radius:12px;
+  padding:18px 20px;cursor:pointer;text-decoration:none;box-shadow:0 12px 24px -8px rgba(100,97,255,.55);
+  transition:transform .12s,filter .12s}
+.cta:active{transform:translateY(1px);filter:brightness(.97)}
+.note{font-size:13px;color:var(--ink-3);text-align:center;margin:10px 0 0}
+
+/* «было → стало» вместо стопки одинаковых карточек */
+.flip{margin-top:14px;display:grid;gap:10px}
+.row{display:grid;grid-template-columns:auto 1fr;gap:13px;align-items:start;padding:16px;
+  border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.row .ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-family:var(--mono);
+  font-weight:600;font-size:13px}
+.ic.was{background:#FBE9E4;color:#C2461F}
+.ic.now{background:var(--p10);color:var(--accent)}
+.row b{font-weight:700;font-size:15.5px}
+.row p{margin:3px 0 0;font-size:14px;color:var(--ink-2)}
+
+/* секция-заголовок */
+.h2{font-weight:800;font-size:24px;letter-spacing:-.02em;margin:0 0 4px}
+.lead2{color:var(--ink-2);font-size:15px;margin:0 0 16px}
+section{padding:38px 0}
+
+/* синтез вкладок — тёмный блок */
+.synth{background:var(--night);color:#EAEBFF;border-radius:18px;padding:20px;
+  box-shadow:0 24px 60px -28px rgba(14,20,48,.7)}
+.synth .tabsm{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
+.synth .chip{font-family:var(--mono);font-size:11px;background:rgba(255,255,255,.08);
+  color:#C9CBFF;border-radius:7px;padding:5px 9px}
+.synth .arrow{font-family:var(--mono);color:#7B80FF;font-size:12px;margin:0 0 10px}
+.synth .out{display:grid;gap:9px}
+.synth .out div{display:flex;gap:9px;font-size:14px;align-items:baseline}
+.synth .k{font-family:var(--mono);font-size:11px;color:#7B80FF;flex:0 0 64px}
+
+/* форма */
+.form{display:grid;gap:11px}
+.form input{font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--card);
+  border:1.5px solid var(--line);border-radius:12px;padding:17px;width:100%}
+.form input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--p10)}
+.intent{display:none}.intent.show{display:block;animation:rise .4s both}
+.q{font-size:14.5px;color:var(--ink-2);margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.chip2{font-size:13.5px;font-family:var(--sans);border:1.5px solid var(--line);background:var(--card);
+  border-radius:999px;padding:9px 14px;cursor:pointer}
+.chip2[aria-pressed=true]{border-color:var(--accent);background:var(--p10);color:var(--accent-ink);font-weight:600}
+.commit{display:flex;gap:10px;font-size:13.5px;color:var(--ink-2);align-items:flex-start}
+.thanks{display:none;font-weight:600;color:var(--green);background:var(--green-soft);
+  border-radius:12px;padding:16px;font-size:15px}.thanks.show{display:block;animation:rise .4s both}
+
+.quotes{display:grid;gap:12px}
+.quotes blockquote{margin:0;padding:0 0 0 16px;border-left:3px solid var(--p20);
+  font-size:15px;color:var(--ink-2)}
+footer{padding:28px 0 46px;color:var(--ink-3);font-size:12.5px;border-top:1px solid var(--line)}
+.fine{font-size:12.5px;color:var(--ink-3)}
+
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+[data-r]{opacity:0;animation:rise .6s cubic-bezier(.2,.7,.2,1) both}
+[data-r="1"]{animation-delay:.05s}[data-r="2"]{animation-delay:.13s}[data-r="3"]{animation-delay:.22s}
+@media(prefers-reduced-motion:reduce){[data-r]{animation:none;opacity:1}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap bar">
+  <span class="logo"><span class="mark">К</span>Кешбэк&nbsp;Браузер</span>
+  <span class="os">iOS · ранний доступ</span>
+</div></header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="kicker" data-r="1">ИИ-браузер для тех, кто живёт в ИИ</div>
+    <h1 data-r="2">Хватит копировать <span class="hl">в чат</span>.</h1>
+    <p class="sub" data-r="2">ИИ видит открытую страницу — отвечает по ней, по PDF и по нескольким вкладкам сразу. Ничего не переносишь руками.</p>
+
+    <div class="demo" data-r="3">
+      <div class="tabs">
+        <span class="tab on">habr.com/…</span>
+        <span class="tab">arxiv.org</span>
+        <span class="tab">docs/api</span>
+        <span class="tab">+2</span>
+      </div>
+      <div class="page">
+        <span class="ln" style="width:92%"></span>
+        <span class="ln sel" style="width:80%"></span>
+        <span class="ln" style="width:88%"></span>
+        <span class="ln" style="width:62%"></span>
+      </div>
+      <div class="aipanel">
+        <div class="aip-h"><span class="dot"></span>ИИ ЧИТАЕТ ЭТУ СТРАНИЦУ</div>
+        <p class="aip-b">Суть раздела: <b>метод даёт +12% без дообучения</b>. Спорно: маленькая выборка.</p>
+      </div>
+      <div class="nocopy">— без копипаста · ⌘C не нужен —</div>
+    </div>
+
+    <div style="margin-top:22px" data-r="3">
+      <a href="#join" class="cta">Записаться в лист ожидания</a>
+      <p class="note">Пред-запуск. Зовём первых из листа ожидания.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="h2">Из «курьера» — в один шаг</h2>
+    <p class="lead2">Сейчас ты гоняешь текст между вкладкой и чатом. Браузер убирает этот шаг.</p>
+    <div class="flip">
+      <div class="row"><span class="ic was">⌘C</span><div><b>Было</b><p>Выдели → скопируй → переключись в чат → вставь → потеряй, какая вкладка откуда.</p></div></div>
+      <div class="row"><span class="ic now">↳</span><div><b>Стало</b><p>Спроси прямо на странице. ИИ уже видит то, что открыто — на мобайле, в PDF, за логином.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="h2">4 вкладки → одна сводка</h2>
+    <p class="lead2">Открыл несколько источников — собери из них одно решение.</p>
+    <div class="synth">
+      <div class="tabsm"><span class="chip">habr</span><span class="chip">arxiv</span><span class="chip">github</span><span class="chip">docs</span></div>
+      <div class="arrow">↓ синтез</div>
+      <div class="out">
+        <div><span class="k">суть</span><span>Подход рабочий, внедряется за вечер.</span></div>
+        <div><span class="k">риск</span><span>Лицензия GPL — для прода уточнить.</span></div>
+        <div><span class="k">что&nbsp;делать</span><span>Прототип на выходных, замер на своих данных.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <h2 class="h2">Ранний доступ</h2>
+    <p class="lead2">Эксперимент для тех, кто живёт в ИИ-инструментах. Зовём первых.</p>
+    <form class="form" id="f" novalidate>
+      <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+      <button class="cta" type="submit">Записаться в лист ожидания</button>
+      <p class="fine">Без спама. Без кешбэка и «умных ассистентов» в почте — только ранний доступ.</p>
+    </form>
+    <div class="intent" id="intent">
+      <p class="q">Что бы вы делали чаще?</p>
+      <div class="chips" role="group">
+        <button type="button" class="chip2" aria-pressed="false">Вопросы по странице</button>
+        <button type="button" class="chip2" aria-pressed="false">Синтез вкладок</button>
+        <button type="button" class="chip2" aria-pressed="false">PDF и доки</button>
+        <button type="button" class="chip2" aria-pressed="false">Ресёрч по вебу</button>
+      </div>
+      <label class="commit"><input type="checkbox"> Готов попробовать первым и дать фидбек</label>
+      <button class="cta" id="done" style="margin-top:14px">Готово</button>
+    </div>
+    <p class="thanks" id="thanks">Готово — вы в листе ожидания. Напишем, как откроем доступ.</p>
+  </section>
+
+  <section>
+    <h2 class="h2">Чужими словами</h2>
+    <div class="quotes">
+      <blockquote>«Бесит возня с копипастом и переключением вкладок.»</blockquote>
+      <blockquote>«Ассистент слепой к тому, что я читаю — приходится всё пересказывать.»</blockquote>
+    </div>
+  </section>
+
+  <footer>© 2025 Кешбэк Браузер · пред-запуск, ранний доступ по листу ожидания</footer>
+</main>
+
+<script>
+(function(){
+  var f=document.getElementById('f'),it=document.getElementById('intent'),th=document.getElementById('thanks');
+  f.addEventListener('submit',function(e){e.preventDefault();
+    if(!f.email.value||f.email.value.indexOf('@')<0){f.email.focus();return;}
+    f.style.display='none';it.classList.add('show');});
+  [].forEach.call(document.querySelectorAll('.chip2'),function(b){
+    b.addEventListener('click',function(){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');});});
+  document.getElementById('done').addEventListener('click',function(){it.classList.remove('show');th.classList.add('show');});
+})();
+</script>
+</body>
+</html>
