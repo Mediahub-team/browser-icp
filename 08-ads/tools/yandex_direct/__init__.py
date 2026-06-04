@@ -5,5 +5,6 @@
 """
 from .client import DirectClient, DirectError, Units
 from .services import Services
+from .envload import load_env
 
-__all__ = ["DirectClient", "DirectError", "Units", "Services"]
+__all__ = ["DirectClient", "DirectError", "Units", "Services", "load_env"]
