@@ -2,44 +2,45 @@
    Кэшбэк Браузер — дизайн-система лендингов (по бренду из Figma)
    Mobile-first. Яркий дружелюбный fintech-consumer, но чисто и
    конверсионно — без генерик-AI-вида.
-   Бренд: индиго-синий (первичный) + зелёный AI-акцент, светлый
-   прохладный фон, белые скруглённые карточки с мягкой тенью.
-   Шрифт: Golos Text (RU, геометрик, полная кириллица).
-   Токены сверены по PNG-экспорту лендинга; точные hex правятся тут.
+   Бренд: синий Primary/60 #6461FF + зелёный Success/60 #00B81F,
+   светлый фон, белые скруглённые карточки (r≈18) с мягкой тенью.
+   Шрифт: Manrope. Токены — из Figma-экспорта hero (точные значения).
    ============================================================ */
 
 :root {
-  /* Фон — нейтральный светлый (сэмплировано из макета: #F8F8F8) */
+  /* Фон (нейтральный) + бренд-тинты Primary (из Figma-экспорта) */
   --bg:        #F8F8F8;
   --bg-tint:   #FFFFFF;
   --card:      #FFFFFF;
+  --primary-10: #EFEFFF;   /* Primary/10 */
+  --primary-20: #E0DFFF;   /* Primary/20 */
 
-  /* Текст */
-  --ink:       #0E0E16;
-  --ink-2:     #3C3C49;
-  --ink-3:     #8C8C9C;
-  --line:      rgba(14, 14, 22, 0.08);
+  /* Текст (Gray/100, /80, /60 из Figma) */
+  --ink:       #000B21;    /* Gray/100 */
+  --ink-2:     #666D7A;    /* Gray/60 */
+  --ink-3:     #333C4D;    /* Gray/80 (используем приглушённо) */
+  --line:      rgba(0, 11, 33, 0.08);
 
-  /* Бренд-синий (сэмплировано: барвинок #6461FF → азур #005DFF, CTA — градиент) */
+  /* Бренд-синий (Primary/60), CTA — сплошной, радиус 12 */
   --accent:      #6461FF;
-  --accent-2:    #2F5BFF;
-  --accent-ink:  #3A37C9;
-  --accent-soft: #ECEBFF;
+  --accent-ink:  #4B48D6;
+  --accent-soft: #EFEFFF;
   --on-accent:   #FFFFFF;
 
-  /* AI-акцент: свежий зелёный (сэмплировано: #49C15A–#5CC56E) */
-  --ai:        #3FBF5C;
-  --ai-ink:    #1E8E40;
-  --ai-soft:   #E6F7EA;
+  /* Зелёный (Success/60 из Figma) */
+  --ai:        #00B81F;
+  --ai-ink:    #008516;
+  --ai-soft:   #E0F8E4;
 
   /* Статус-вердикт товара (S) */
-  --ok:   #15B877;
+  --ok:   #00B81F;
   --warn: #E8732A;
 
-  --font: "Golos Text", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  /* Шрифт бренда — Manrope (из Figma-экспорта) */
+  --font: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
-  --r:    20px;        /* крупное скругление карточек — как в бренде */
-  --r-sm: 13px;
+  --r:    18px;        /* скругление карточек — как в бренде (17.88px) */
+  --r-sm: 12px;
   --maxw: 440px;
   --pad:  20px;
   --shadow: 0 8px 28px rgba(20, 20, 60, 0.07);
@@ -79,14 +80,14 @@ img, svg { max-width: 100%; }
 
 /* --- Типографика — жирные геометрик-заголовки --- */
 h1 {
-  font-weight: 800;
-  font-size: clamp(29px, 8vw, 38px);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-size: clamp(26px, 7vw, 32px);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
   margin: 18px 0 0;
   text-wrap: balance;
 }
-.lead { font-size: 17px; color: var(--ink-2); margin: 13px 0 0; }
+.lead { font-size: 16px; line-height: 1.5; color: var(--ink-2); margin: 12px 0 0; }
 h2 { font-weight: 700; font-size: 22px; letter-spacing: -0.01em; margin: 0 0 16px; }
 
 section { padding: 38px 0; }
@@ -95,10 +96,9 @@ section { padding: 38px 0; }
 /* --- CTA — синяя кнопка-пилюля с мягкой тенью --- */
 .cta {
   display: block; width: 100%; text-align: center;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
-  color: var(--on-accent);
+  background: var(--accent); color: var(--on-accent);
   font-family: var(--font); font-weight: 700; font-size: 17px;
-  border: none; border-radius: 16px; padding: 18px 20px;
+  border: none; border-radius: 12px; padding: 18px 20px;
   cursor: pointer; text-decoration: none;
   box-shadow: var(--shadow-cta);
   transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
