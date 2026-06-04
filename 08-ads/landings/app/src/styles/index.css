@@ -2,6 +2,15 @@
 @import './tailwind.css';
 @import './theme.css';
 
-/* Защита мобильной вёрстки: без горизонтального скролла на узких экранах (360/320) */
-html, body, #root { overflow-x: hidden; max-width: 100%; }
+/* Мобильная вёрстка: без горизонтального скролла + лендинг колонкой телефонной
+   ширины, центрирован на светлом бренд-фоне (на широком экране нет «съехавшего» гаттера). */
+html, body { overflow-x: hidden; max-width: 100%; }
+body { background: #EFEFFF; }
+#root {
+  width: 100%;
+  max-width: 480px;
+  margin-inline: auto;
+  background: #FFFFFF;
+  overflow-x: hidden;
+}
 img { max-width: 100%; }
