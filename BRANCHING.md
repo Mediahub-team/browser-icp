@@ -120,6 +120,9 @@ git switch -c rollback/<descr> <sha>   # или поднять всю точку
 | — | `cycle/new-vision` | повтор пайплайна под изолированную механику «кешбэк за любую покупку» | активна | — |
 | 4→5 | `s4/guide-custdev-first` | гоним первым custdev (с демо) | влита в `cycle/new-vision`, архив | — |
 | 4→5 | `s4/guide-problem-first` | гоним первым problem (Mom Test) | влита в `cycle/new-vision`, архив | — |
+| — | `cycle/new-vision-v2` | видение v2: кешбэк только за покупки через браузер, смена канала в центре (0→9) | активна | — |
+| 4→5 | `s4/guide-custdev-first-v2` | custdev v2 (ось смены канала) | влита в `cycle/new-vision-v2`, архив | — |
+| 4→5 | `s4/guide-problem-first-v2` | problem v2 (прошлый опыт смены канала) | влита в `cycle/new-vision-v2`, архив | — |
 
 ---
 
