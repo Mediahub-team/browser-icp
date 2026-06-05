@@ -1,25 +1,20 @@
 import { useState } from "react";
 import imgSuccess from "../../imports/LandingForm/7696dedb881593f0ce1aa6829001696e573de64c.png";
 import imgError from "../../imports/LandingForm/56a98f99601189c44980d645a881539764f62a04.png";
-import { DEFAULT_VARIANT, type LandingVariant } from "../variants";
 
 type Step = "form" | "success" | "error";
 type Tab = "email" | "phone";
 
 interface WaitlistModalProps {
   onClose: () => void;
-  variant?: LandingVariant;
 }
 
-export function WaitlistModal({ onClose, variant = DEFAULT_VARIANT }: WaitlistModalProps) {
-  const m = variant.modal;
+export function WaitlistModal({ onClose }: WaitlistModalProps) {
   const [step, setStep] = useState<Step>("form");
   const [tab, setTab] = useState<Tab>("email");
   const [value, setValue] = useState("");
   const [fieldError, setFieldError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [intent, setIntent] = useState("");
-  const [readyFirst, setReadyFirst] = useState(false);
 
   function validate(): boolean {
     if (tab === "email") {
@@ -68,9 +63,9 @@ export function WaitlistModal({ onClose, variant = DEFAULT_VARIANT }: WaitlistMo
             </button>
 
             <div className="flex flex-col gap-4 items-center text-center w-full">
-              <p className="font-['Manrope:Bold',sans-serif] font-bold text-[24px] leading-[30px] text-[#000b21] w-full">{m.title}</p>
+              <p className="font-['Manrope:Bold',sans-serif] font-bold text-[24px] leading-[30px] text-[#000b21] w-full">Ранний доступ</p>
               <p className="font-['Manrope:Regular',sans-serif] font-normal text-[16px] leading-[24px] text-[#666d7a] w-full">
-                {m.subtitle}
+                Оставьте email или телефон, чтобы получить приглашение и бонус +200 ₽ на первую покупку
               </p>
             </div>
 
@@ -130,27 +125,6 @@ export function WaitlistModal({ onClose, variant = DEFAULT_VARIANT }: WaitlistMo
                 Спасибо! Мы добавили вас в список раннего доступа и скоро свяжемся с вами
               </p>
             </div>
-
-            <div className="flex flex-col gap-3 w-full">
-              <p className="font-['Manrope:Regular',sans-serif] font-normal text-[14px] leading-[20px] text-[#666d7a] w-full text-center">{m.intentQuestion}</p>
-              <div className="flex flex-wrap gap-2 justify-center">
-                {m.intentOptions.map((opt) => (
-                  <button
-                    key={opt}
-                    type="button"
-                    onClick={() => setIntent(opt)}
-                    className={`text-[13px] leading-[18px] font-['Inter:Regular',sans-serif] rounded-[999px] px-3 py-2 border cursor-pointer transition-colors ${intent === opt ? "bg-[#efefff] border-[#6461ff] text-[#4b48d6] font-semibold" : "bg-white border-[#e0dfff] text-[#666d7a]"}`}
-                  >
-                    {opt}
-                  </button>
-                ))}
-              </div>
-              <label className="flex items-start gap-2 text-[13px] leading-[18px] text-[#666d7a] cursor-pointer">
-                <input type="checkbox" checked={readyFirst} onChange={(e) => setReadyFirst(e.target.checked)} className="mt-[2px]" />
-                Готов попробовать первым и оставить отзыв
-              </label>
-            </div>
-
             <button
               onClick={onClose}
               className="w-full bg-[#6461ff] rounded-[8px] px-6 py-4 text-[16px] leading-[24px] font-['Inter:Semi_Bold',sans-serif] font-semibold text-white border-0 cursor-pointer"

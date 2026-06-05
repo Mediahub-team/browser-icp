@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { VariantContext, DEFAULT_VARIANT, type LandingVariant } from "../../app/variants";
 import svgPaths from "./svg-44thp1lntp";
 import imgGeminiGeneratedImageOpzr99Opzr99Opzr2 from "./7397bdc54ea9ba8660c1a1ab014a4e6859b6d736.png";
 import imgIcons from "./56425b07b835445d3c7237ebd8901de8e4994b47.png";
@@ -371,15 +369,14 @@ function Image() {
 }
 
 function Frame57() {
-  const v = useContext(VariantContext);
   return (
     <div className="[word-break:break-word] content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
       <div className="font-['Manrope:Bold',sans-serif] font-bold leading-[0] relative shrink-0 text-[#000b21] text-[24px] w-full whitespace-pre-wrap">
-        {v.hero.lines.map((line, i) => (
-          <p key={i} className={i < v.hero.lines.length - 1 ? "leading-[30px] mb-0" : "leading-[30px]"}>{line}</p>
-        ))}
+        <p className="leading-[30px] mb-0">{`Возвращайте до 30% `}</p>
+        <p className="leading-[30px] mb-0">{`с каждой покупки `}</p>
+        <p className="leading-[30px]">на маркетплейсах</p>
       </div>
-      <p className="font-['Manrope:Regular',sans-serif] font-normal leading-[24px] relative shrink-0 text-[#666d7a] text-[16px] w-full">{v.hero.subtitle}</p>
+      <p className="font-['Manrope:Regular',sans-serif] font-normal leading-[24px] relative shrink-0 text-[#666d7a] text-[16px] w-full">Закупайтесь выгодно на WB, Ozon, Маркете и других площадках</p>
     </div>
   );
 }
@@ -2810,7 +2807,7 @@ function MaskGroup1() {
 
 function Image5() {
   return (
-    <div className="h-[187px] relative rounded-[6.844px] shrink-0 w-full max-w-[334px]" data-name="Image">
+    <div className="h-[187px] max-w-[403.8114929199219px] min-w-[334px] relative rounded-[6.844px] shrink-0 w-[334px]" data-name="Image">
       <Frame49 />
       <MaskGroup1 />
     </div>
@@ -2819,8 +2816,9 @@ function Image5() {
 
 function Photo5() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full" data-name="Photo">
+    <div className="content-center flex flex-wrap gap-y-[48px] items-center justify-between min-w-[334px] relative shrink-0 w-full" data-name="Photo">
       <Name6 />
+      <div className="bg-[rgba(217,217,217,0)] h-[20px] relative shrink-0 w-[40px]" data-name="Stopper (для корректного изменения размера блока)" />
       <Image5 />
     </div>
   );
@@ -2967,19 +2965,16 @@ function CallToAction({ onCtaClick }: { onCtaClick?: () => void }) {
   );
 }
 
-export default function Landing1440Light({ onCtaClick, variant = DEFAULT_VARIANT }: { onCtaClick?: () => void; variant?: LandingVariant }) {
-  const s = variant.sections;
+export default function Landing1440Light({ onCtaClick }: { onCtaClick?: () => void }) {
   return (
-    <VariantContext.Provider value={variant}>
     <div className="bg-white content-stretch flex flex-col items-start relative size-full" data-name="Landing 1440 Light">
       <Header onCtaClick={onCtaClick} />
       <Hero />
-      {s.marketplaces && <Content1 />}
-      {s.steps && <Content3 />}
-      {s.compare && <Content4 />}
-      {s.reviews && <Content6 />}
+      <Content1 />
+      <Content3 />
+      <Content4 />
+      <Content6 />
       <CallToAction onCtaClick={onCtaClick} />
     </div>
-    </VariantContext.Provider>
   );
 }
