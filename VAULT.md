@@ -36,7 +36,7 @@ tags: [meta, obsidian, vault]
 
 ```yaml
 ---
-type: product|hypothesis|icp|persona|guide|run|analysis|offer|targeting|creative|landing|test-plan|result|reference|template
+type: product-functionality|product-positioning|market-landscape|product-description|product|hypothesis|icp|persona|guide|run|analysis|offer|targeting|creative|landing|test-plan|result|reference|template
 stage: 0            # номер этапа 0–9 (или meta)
 status: draft|untested|validated|done
 tags: [stage/N, motive/A]
@@ -83,8 +83,15 @@ segment: "[[icp-05-deal-hunters]]"
 Цепочка источников:
 
 ```
-product → hypotheses → icp → persona → guide → run → analysis → offer → targeting → result
+product-functionality ┐
+                       ├→ market-landscape → product-description → hypotheses → icp → persona → guide → run → analysis → offer → targeting → result
+product-positioning ───┘
 ```
+
+> Этап 0 раскладывается на под-артефакты (0.1 функциональность, 0.2 позиционирование, 0.5
+> ландшафт, 0.9 описание). Функциональность — корень без источника; позиционирование ссылается
+> на функциональность; ландшафт — на позиционирование; описание — на все три. Принцип
+> «функциональность ⟂ позиционирование» — в [[PLAN]] §2.0.
 
 ## 6. Dataview — готовые запросы (вставлять в любую заметку)
 
