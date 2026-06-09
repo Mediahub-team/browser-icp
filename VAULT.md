@@ -47,7 +47,7 @@ tags: [stage/N, motive/A]
 
 ```yaml
 # icp
-motive: A            # A | S | C
+motive: <ось цикла>  # A|S|C (main) · Ф|П|Б (кешбэк-циклы) — ось специфична для цикла
 fit_confidence: high # high|med|low
 source: "[[audience-hypotheses]]"
 
@@ -71,7 +71,7 @@ segment: "[[icp-05-deal-hunters]]"
 ```
 
 ## 4. Теги
-`#stage/0…9` · `#motive/A` `#motive/S` `#motive/C` ·
+`#stage/0…9` · `#motive/<ось цикла>` (A/S/C в `main`; Ф/П/Б в кешбэк-циклах) ·
 `#fit/core` `#fit/strong` `#fit/peripheral` `#fit/non-icp` ·
 `#status/untested` `#status/validated`.
 
