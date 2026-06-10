@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "frontend-design": {
+      "source": "boraoztunc/skills",
+      "sourceType": "github",
+      "skillPath": "frontend-design/SKILL.md",
+      "computedHash": "516bd2154eb843a8240e43d5b285229129853114ad7075a5e141e1c08e408c84"
+    },
+    "stop-slop": {
+      "source": "hardikpandya/stop-slop",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "09acd38f01d6c643bce871a739141c01a06a04f43d8b55959ef73550476e771c"
+    },
+    "web-design-guidelines": {
+      "source": "boraoztunc/skills",
+      "sourceType": "github",
+      "skillPath": "web-design-guidelines/SKILL.md",
+      "computedHash": "78a53d178bed2090b7133ee1fdccd85bf171f38342e3a5400c935694e0916f35"
+    }
+  }
+}
