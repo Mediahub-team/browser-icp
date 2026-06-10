@@ -3,7 +3,8 @@
 Настройка таргета и креативов под офферы и аудитории + план сплит-теста.
 - [`targeting/`](targeting/) — настройки аудиторий по площадкам (`<segment>.md`). Шаблон: [`../templates/ad-targeting-template.md`](../templates/ad-targeting-template.md).
 - [`creatives/`](creatives/) — креативы под офферы (`<offer>.md`): тексты, сценарии видео, визуал-бриф. Шаблон: [`../templates/creative-template.md`](../templates/creative-template.md).
-- `test-plan.md` — матрица тестов: оффер × аудитория × креатив × площадка, бюджеты, метрики, пороги.
+- [`landings/`](landings/) — ТЗ на пред-продуктовые лендинги (`landing-<offer>.md`, 1 на оффер). Шаблон: [`../templates/landing-designer-brief.md`](../templates/landing-designer-brief.md).
+- `test-plan.md` — матрица тестов: оффер × аудитория × креатив × лендинг × площадка, бюджеты, метрики, пороги.
 
 **Площадки (RU):** VK Ads, Яндекс Директ, Telegram Ads (приоритет по совпадению с каналами ICP).
 **Вход:** офферы (`07-offers/`). **Выход:** запущенные кампании + зафиксированные гипотезы.
