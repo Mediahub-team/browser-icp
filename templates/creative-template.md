@@ -67,6 +67,16 @@ tags: [stage/8, creative]
 - Что именно проверяет этот креатив (угол/посыл/формат) и ожидаемый сигнал — для честной сверки на этапе 9.
 
 ---
-> **Источники** (подставить вики-ссылки при заполнении): оффер `07-offers/offer-<slug>`, ICP
-> `02-icp/icp-NN-<slug>`, customer language `06-analysis/`. **Downstream:** `08-ads/test-plan.md` → этап 9.
+
+## Источники
+> **Отдельная секция для читающего** (markdown-рендер). Формат: frontmatter `sources:` и инлайн
+> `**Источники:**` вверху — **вики** `[[…]]` (Obsidian + трассировка); **здесь** — те же источники
+> **markdown-ссылками относительно этого файла** (`08-ads/creatives/` → `../../` до корневых папок,
+> `../` до соседних папок этапа 8). **Пути проверять** перед сдачей (файл открывается).
+- Оффер: [offer-&lt;slug&gt;](../../07-offers/offer-<slug>.md)
+- ICP: [icp-NN-&lt;slug&gt;](../../02-icp/icp-NN-<slug>.md)
+- Анализ (customer language): [comparison-&lt;date&gt;](../../06-analysis/comparison-<date>.md)
+- План тестов: [test-plan](../test-plan.md) · Лендинг: [landing-&lt;slug&gt;](../landings/landing-<slug>.md)
+
+**Что дальше:** креатив идёт в сплит-тест этапа 8 (связки — в test-plan); по итогам открутки сверяем с гипотезами на этапе 9.
 </content>
