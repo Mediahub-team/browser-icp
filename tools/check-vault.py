@@ -20,6 +20,14 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_DIRS = {".git", ".obsidian", "node_modules"}
 WIKILINK = re.compile(r"\[\[([^\[\]]+?)\]\]")
 
+# Канонические слаги этапов: методология/шаблоны ссылаются на них до того, как этап
+# сгенерирован (скелет пайплайна). Нерезолв таких ссылок — forward-ссылка (норма),
+# а не битая. Прогонные артефакты (icp-*, persona-*, offer-*, run-*, …) обязаны резолвиться.
+CANONICAL_STAGE_SLUGS = {
+    "product-functionality", "product-positioning", "market-landscape",
+    "product-description", "audience-hypotheses", "offers-matrix", "test-plan",
+}
+
 
 def md_files() -> list[str]:
     out = []
@@ -63,6 +71,7 @@ def main() -> int:
     keys = {note_key(p) for p in files}
 
     broken: list[tuple[str, str]] = []
+    forward: list[tuple[str, str]] = []
     fm_errors: list[tuple[str, str]] = []
     link_count = 0
 
@@ -80,9 +89,14 @@ def main() -> int:
             link_count += 1
             key = resolve(m.group(1))
             if key and key not in keys:
-                broken.append((rel, m.group(1)))
+                if key in CANONICAL_STAGE_SLUGS:
+                    forward.append((rel, m.group(1)))
+                else:
+                    broken.append((rel, m.group(1)))
 
     print(f"Файлов .md: {len(files)} · вики-ссылок проверено: {link_count}")
+    if forward:
+        print(f"Forward-ссылки на несгенерированные этапы (норма скелета): {len(forward)}")
     if fm_errors:
         print(f"\nFRONTMATTER — ошибок: {len(fm_errors)}")
         for rel, e in fm_errors:
