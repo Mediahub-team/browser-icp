@@ -3,7 +3,7 @@
 Настройка таргета и креативов под офферы и аудитории + план сплит-теста.
 - [`targeting/`](targeting/) — настройки аудиторий по площадкам (`<segment>.md`). Шаблон: [`../templates/ad-targeting-template.md`](../templates/ad-targeting-template.md).
 - [`creatives/`](creatives/) — креативы под офферы (`<offer>.md`): тексты, сценарии видео, визуал-бриф. Шаблон: [`../templates/creative-template.md`](../templates/creative-template.md).
-- [`landings/`](landings/) — ТЗ на пред-продуктовые лендинги (`landing-<offer>.md`, 1 на оффер). Шаблон: [`../templates/landing-designer-brief.md`](../templates/landing-designer-brief.md).
+- [`landings/`](landings/) — ТЗ на пред-продуктовые лендинги по позиционированию продукта (`landing-<version-name>.md`, 1 на позиционированию продукта). Шаблон: [`../templates/landing-designer-brief.md`](../templates/landing-designer-brief.md).
 - `test-plan.md` — матрица тестов: оффер × аудитория × креатив × лендинг × площадка, бюджеты, метрики, пороги.
 
 **Площадки (RU):** VK Ads, Яндекс Директ, Telegram Ads (приоритет по совпадению с каналами ICP).
@@ -13,8 +13,7 @@
 - [`tools/`](tools/) — Python-инструмент управления **Yandex Direct API** (возможности,
   что грузим, какие таргетинги, Поиск vs РСЯ раздельно, safety-режимы) — см. `tools/README.md`.
 - Форматы лендингов: [`../templates/landing-designer-brief.md`](../templates/landing-designer-brief.md)
-  (ТЗ для дизайнера) и [`../templates/landing-design-prompt.md`](../templates/landing-design-prompt.md)
-  (промт для AI-генерации сайтов, Claude/tool-agnostic).
+  (ТЗ для дизайнера).
 
 ### Принцип теста
 Изолируем переменные: один оффер гоняем на несколько аудиторий и несколько офферов на
@@ -32,12 +31,10 @@
 | `targeting/<segment>.md` | `ads` + `russian-copywriting` (тексты-посылы) | Google/Meta-логика → VK Ads / Яндекс Директ (Поиск+РСЯ) / Telegram Ads + посевы |
 | `creatives/<offer>.md` (копия) | `ad-creative` + `russian-copywriting` | RSA-структура → char-лимиты Директа (56/30/81), TG ≤160; язык — живой русский |
 | `creatives/` (визуал/видео) | `image`, `video` | форматы и спеки под VK/Директ/TG; текст на макете — по-русски, бренд-токены |
-| `landings/landing-<offer>.md` (ТЗ) | `russian-copywriting` | копия страницы — живой русский «ты/вы», по ФЗ-38; структура — из шаблона |
+| `landings/landing-<version-name>.md` (ТЗ) | `russian-copywriting` | копия страницы — живой русский «ты/вы», по ФЗ-38; структура — из шаблона |
 | `test-plan.md` | `ab-testing` | пороги/значимость → метрики RU-пред-запуска (CPS, заявки), сверка с этапом 9 |
 
 > 🚫 **Не пробрасывать формулировки из предыдущих артефактов.** Из оффера/ICP берём факты,
 > ограничения и customer language (голоса клиента — в кавычках, как сырьё); продающие фразы
 > пишем **заново** через `russian-copywriting`. Дословный перенос заголовков/посылов вниз запрещён
 > (анти-циркулярность языка).
->
-> Прочие скиллы (`cro`, `copywriting`, `frontend-design`, `analytics` и др.) на этом этапе **не используем**.
