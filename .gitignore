@@ -11,6 +11,9 @@ __pycache__/
 # Сгенерированные артефакты тулзов (регенерируются скриптами)
 08-ads/tools/*/build/
 
+# HTML-снапшоты референсов — временные, регенерируются через add_references.py
+08-ads/references/*.html
+
 # Obsidian — волатильное (конфиг app/core/community коммитим, остальное нет)
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json

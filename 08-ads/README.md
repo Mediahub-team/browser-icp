@@ -4,16 +4,18 @@
 - [`targeting/`](targeting/) — настройки аудиторий по площадкам (`<segment>.md`). Шаблон: [`../templates/ad-targeting-template.md`](../templates/ad-targeting-template.md).
 - [`creatives/`](creatives/) — креативы под офферы (`<offer>.md`): тексты, сценарии видео, визуал-бриф. Шаблон: [`../templates/creative-template.md`](../templates/creative-template.md).
 - [`landings/`](landings/) — ТЗ на пред-продуктовые лендинги по позиционированию продукта (`landing-<version-name>.md`, 1 на позиционированию продукта). Шаблон: [`../templates/landing-designer-brief.md`](../templates/landing-designer-brief.md).
+- [`references/`](references/) — формулировки конкурентов для вдохновения при написании лендинга. Рабочий цикл:
+  1. `08-ads/tools/references/add_references.py` — скачивает HTML-снапшоты по `links.json` в `references/*.html` (файлы временные, в `.gitignore`).
+  2. `08-ads/tools/references/extract_references.py` — парсит HTML → извлекает H1/H2/CTA/буллеты → сохраняет `references/<domain>.md`; английский текст переводит через Google Translate (без ключа), обе версии — в одном файле; перевод требует правки через скилл `russian-copywriting`.
+  3. MD-файлы коммитятся; HTML регенерируются при необходимости.
 - `test-plan.md` — матрица тестов: оффер × аудитория × креатив × лендинг × площадка, бюджеты, метрики, пороги.
 
 **Площадки (RU):** VK Ads, Яндекс Директ, Telegram Ads (приоритет по совпадению с каналами ICP).
 **Вход:** офферы (`07-offers/`). **Выход:** запущенные кампании + зафиксированные гипотезы.
 
 ### Инструменты и форматы (корневое)
-- [`tools/`](tools/) — Python-инструмент управления **Yandex Direct API** (возможности,
-  что грузим, какие таргетинги, Поиск vs РСЯ раздельно, safety-режимы) — см. `tools/README.md`.
-- Форматы лендингов: [`../templates/landing-designer-brief.md`](../templates/landing-designer-brief.md)
-  (ТЗ для дизайнера).
+- [`tools/`](tools/) — Python-инструменты: **Yandex Direct API** (запуск кампаний, см. `tools/README.md`) и **references** (`add_references.py` + `extract_references.py` — загрузка и разбор референсов).
+- Шаблон лендинга: [`../templates/landing-designer-brief.md`](../templates/landing-designer-brief.md) (ТЗ для дизайнера; содержит инструкцию по использованию `references/`).
 
 ### Принцип теста
 Изолируем переменные: один оффер гоняем на несколько аудиторий и несколько офферов на
