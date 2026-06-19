@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "bukvarix": {
+      "command": "node",
+      "args": ["mcp-bukvarix-launcher.mjs"]
+    }
+  }
+}
