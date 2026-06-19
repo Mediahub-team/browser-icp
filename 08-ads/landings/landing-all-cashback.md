@@ -1,4 +1,17 @@
+---
+type: landing
+stage: 8
+sources: ["[[product-description]]", "[[product-positioning]]", "[[offers-matrix]]", "[[backit-me]]", "[[cashback-ru]]", "[[letyshops-com]]", "[[joinhoney-com]]", "[[capitaloneshopping-com]]", "[[rakuten-com]]", "[[topcashback-com]]", "[[shopback-com]]"]
+status: untested
+tags: [stage/8, landing, designer-brief]
+---
+
 # ТЗ для лендинга — кешбек за любую покупку
+
+**Источники:** [[product-description]] · [[product-positioning]] · [[offers-matrix]].  
+**Референсы формулировок:** [[backit-me]] · [[cashback-ru]] · [[letyshops-com]] · [[joinhoney-com]] · [[capitaloneshopping-com]] · [[rakuten-com]] · [[topcashback-com]] · [[shopback-com]].
+
+> Единый лендинг позиционирования для всех офферов текущего цикла (`cycle/new-vision-v3`). Угол: кешбек за любую покупку через браузер. Цель страницы — **waitlist** (e-mail заявка). Все тесты T1–T6 + X1–X3 ведут на этот лендинг.
 
 ## 1. Hero
 
