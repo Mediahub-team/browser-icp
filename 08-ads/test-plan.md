@@ -22,12 +22,12 @@ tags: [stage/8, test-plan]
 ## Базовые тесты
 | # | Оффер | Сегмент / таргетинг | Креатив | Лендинг | Площадка | Что проверяет |
 |---|---|---|---|---|---|---|
-| **T1** | [[offer-03-no-ritual]] | [[icp-03-cashback-optimizers\|ICP-03]] | [[creative-03-no-ritual]] | [[landing-03-no-ritual]] | TG + Директ РСЯ | первичный угол «без ритуала» |
-| **T2** | [[offer-03-payout-proof]] | ICP-03 | [[creative-03-payout-proof]] | [[landing-03-payout-proof]] | Директ РСЯ + TG | снимает ли K3 (доверие) конверсию |
-| **T3** | [[offer-04-live-rubles]] | [[icp-04-points-stuck\|ICP-04]] | [[creative-04-live-rubles]] | [[landing-04-live-rubles]] | VK/OK + Директ Поиск | сила «живые рубли», узость |
-| **T4** | [[offer-01-passive-stack]] | [[icp-01-web-native\|ICP-01]] | [[creative-01-passive-stack]] | [[landing-01-passive-stack]] | Директ РСЯ/Поиск + VK | **замер K0** (есть ли объём web-базы) |
-| **T5** | [[offer-05-no-scan]] | [[icp-05-family-shoppers\|ICP-05]] | [[creative-05-no-scan]] | [[landing-05-no-scan]] | VK/TG + инфлюенсер | отстройка от Едадила |
-| **T6** | [[offer-02-percent-big]] | [[icp-02-site-big-checks\|ICP-02]] | [[creative-02-percent-big]] | [[landing-02-percent-big]] | Директ Поиск | %/гибрид-модель на крупных |
+| **T1** | [[offer-03-no-ritual]] | [[icp-03-cashback-optimizers\|ICP-03]] | [[creative-03-no-ritual]] | [[landing-all-cashback]] | TG + Директ РСЯ | первичный угол «без ритуала» |
+| **T2** | [[offer-03-payout-proof]] | ICP-03 | [[creative-03-payout-proof]] | [[landing-all-cashback]] | Директ РСЯ + TG | снимает ли K3 (доверие) конверсию |
+| **T3** | [[offer-04-live-rubles]] | [[icp-04-points-stuck\|ICP-04]] | [[creative-04-live-rubles]] | [[landing-all-cashback]] | VK/OK + Директ Поиск | сила «живые рубли», узость |
+| **T4** | [[offer-01-passive-stack]] | [[icp-01-web-native\|ICP-01]] | [[creative-01-passive-stack]] | [[landing-all-cashback]] | Директ РСЯ/Поиск + VK | **замер K0** (есть ли объём web-базы) |
+| **T5** | [[offer-05-no-scan]] | [[icp-05-family-shoppers\|ICP-05]] | [[creative-05-no-scan]] | [[landing-all-cashback]] | VK/TG + инфлюенсер | отстройка от Едадила |
+| **T6** | [[offer-02-percent-big]] | [[icp-02-site-big-checks\|ICP-02]] | [[creative-02-percent-big]] | [[landing-all-cashback]] | Директ Поиск | %/гибрид-модель на крупных |
 
 ## Кросс-тесты (изоляция вклада аудитории — один угол на разных)
 | # | Оффер/угол | На аудиторию | Зачем |
