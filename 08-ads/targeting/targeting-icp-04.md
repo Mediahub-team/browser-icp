@@ -3,7 +3,7 @@ type: targeting
 stage: 8
 status: untested
 segment: "[[icp-04-privacy-antiyandex]]"
-sources: ["[[icp-04-privacy-antiyandex]]", "[[offer-04-no-yandex]]", "[[keyword-research-icp-04]]"]
+sources: ["[[icp-04-privacy-antiyandex]]", "[[offer-04-no-tracking]]", "[[keyword-research-icp-04]]"]
 tags: [stage/8, targeting]
 ---
 
@@ -23,7 +23,7 @@ tags: [stage/8, targeting]
 
 **Ось 1 — ключи как контекст** (`Keywords`, из [[keyword-research-icp-04]] §3)
 - **Набор:** `приватный браузер` · `браузер приватный` · `браузер без слежки` · `нейросеть без впн`
-- **Минус-слова:** `андроид` · `firefox` · `chrome` · `порно` · `озвучка` · `vpn скачать`
+- **Минус-слова:** `андроид` · `firefox` · `chrome` · `озвучка` · `vpn скачать`
 
 **Ось 2 — интересы и поведение** (`AudienceTargets`) — **ведущая**
 - **Краткосрочные:** приватность/кибербезопасность, VPN-сервисы, ИИ-инструменты.
@@ -45,5 +45,5 @@ tags: [stage/8, targeting]
 ## Источники
 - ICP: [icp-04-privacy-antiyandex](../../02-icp/icp-04-privacy-antiyandex.md)
 - Анализ/каналы: [comparison-2026-06-23](../../06-analysis/comparison-2026-06-23.md) · [offers-matrix](../../07-offers/offers-matrix.md)
-- Офферы: [offer-04-no-yandex](../../07-offers/offer-04-no-yandex.md) · [offer-04-no-tracking](../../07-offers/offer-04-no-tracking.md)
+- Оффер: [offer-04-no-tracking](../../07-offers/offer-04-no-tracking.md)
 - Ключи: [keyword-research-icp-04](../keyword-research/keyword-research-icp-04.md) · Тест-план: [test-plan](../test-plan.md)
