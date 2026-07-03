@@ -1,0 +1,387 @@
+<title>Этап 9 — Результаты кампании H1_marketplace</title>
+<style>
+  :root {
+    --bg: #f4f6f7;
+    --surface: #ffffff;
+    --surface-2: #eef1f2;
+    --ink: #14201f;
+    --ink-soft: #48585a;
+    --ink-faint: #7d8d8f;
+    --line: #dde3e4;
+    --line-strong: #c6d0d1;
+    --accent: #0e7c86;
+    --accent-soft: #d3ebed;
+    --good: #2f8f5b;
+    --good-bg: #e2f2e8;
+    --warn: #b7791f;
+    --warn-bg: #f6ecd6;
+    --crit: #c0453c;
+    --crit-bg: #f6dedb;
+    --shadow: 0 1px 2px rgba(20,32,31,.05), 0 8px 24px rgba(20,32,31,.05);
+    --mono: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Menlo, Consolas, monospace;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1414;
+      --surface: #141d1d;
+      --surface-2: #1b2626;
+      --ink: #e6edec;
+      --ink-soft: #a2b1b1;
+      --ink-faint: #6f8080;
+      --line: #253232;
+      --line-strong: #334443;
+      --accent: #3fb6bf;
+      --accent-soft: #123536;
+      --good: #52b97e;
+      --good-bg: #123021;
+      --warn: #d6a44a;
+      --warn-bg: #33280f;
+      --crit: #e2695f;
+      --crit-bg: #351a17;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f6f7; --surface: #ffffff; --surface-2: #eef1f2; --ink: #14201f;
+    --ink-soft: #48585a; --ink-faint: #7d8d8f; --line: #dde3e4; --line-strong: #c6d0d1;
+    --accent: #0e7c86; --accent-soft: #d3ebed; --good: #2f8f5b; --good-bg: #e2f2e8;
+    --warn: #b7791f; --warn-bg: #f6ecd6; --crit: #c0453c; --crit-bg: #f6dedb;
+    --shadow: 0 1px 2px rgba(20,32,31,.05), 0 8px 24px rgba(20,32,31,.05);
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1414; --surface: #141d1d; --surface-2: #1b2626; --ink: #e6edec;
+    --ink-soft: #a2b1b1; --ink-faint: #6f8080; --line: #253232; --line-strong: #334443;
+    --accent: #3fb6bf; --accent-soft: #123536; --good: #52b97e; --good-bg: #123021;
+    --warn: #d6a44a; --warn-bg: #33280f; --crit: #e2695f; --crit-bg: #351a17;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 40px 24px 72px; }
+
+  /* header */
+  .masthead { border-bottom: 1px solid var(--line-strong); padding-bottom: 20px; margin-bottom: 32px; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 10px;
+  }
+  h1 { font-size: clamp(26px, 4vw, 38px); line-height: 1.1; margin: 0 0 12px; letter-spacing: -.02em; text-wrap: balance; }
+  .sub { color: var(--ink-soft); max-width: 62ch; margin: 0; font-size: 15px; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 16px; font-family: var(--mono); font-size: 12.5px; color: var(--ink-faint); }
+  .meta-row b { color: var(--ink-soft); font-weight: 600; }
+
+  /* section titles */
+  .sect-title { display: flex; align-items: baseline; gap: 12px; margin: 44px 0 16px; }
+  .sect-title h2 { font-size: 15px; letter-spacing: .04em; text-transform: uppercase; margin: 0; color: var(--ink); }
+  .sect-title .hint { font-size: 13px; color: var(--ink-faint); font-family: var(--mono); }
+
+  /* tabs */
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+  .tab {
+    font-family: var(--mono); font-size: 12.5px; letter-spacing: .01em;
+    padding: 7px 13px; border-radius: 999px; cursor: pointer;
+    background: var(--surface); color: var(--ink-soft);
+    border: 1px solid var(--line-strong);
+    transition: background .15s, color .15s, border-color .15s;
+  }
+  .tab:hover { border-color: var(--accent); color: var(--ink); }
+  .tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .tab.is-active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  :root[data-theme="dark"] .tab.is-active, .tab.is-active { color: #fff; }
+  @media (prefers-color-scheme: dark) { .tab.is-active { color: #06201f; } }
+  :root[data-theme="light"] .tab.is-active { color: #fff; }
+  :root[data-theme="dark"] .tab.is-active { color: #06201f; }
+
+  /* KPI grid */
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (prefers-reduced-motion: no-preference) { .kpi { animation: fade .25s ease; } }
+  @keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+  @media (max-width: 760px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
+  .kpi {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+    padding: 16px 16px 14px; box-shadow: var(--shadow);
+  }
+  .kpi .label { font-size: 12px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: .05em; margin: 0 0 8px; }
+  .kpi .val { font-family: var(--mono); font-size: 26px; font-variant-numeric: tabular-nums; letter-spacing: -.01em; line-height: 1; }
+  .kpi .unit { font-size: 14px; color: var(--ink-soft); margin-left: 2px; }
+  .kpi .note { font-size: 12px; color: var(--ink-soft); margin: 8px 0 0; }
+  .kpi.flag { border-color: color-mix(in srgb, var(--crit) 45%, var(--line)); }
+  .kpi.flag .val { color: var(--crit); }
+  .tag { display: inline-block; font-family: var(--mono); font-size: 10.5px; padding: 1px 6px; border-radius: 999px; letter-spacing: .03em; vertical-align: middle; }
+  .tag.good { background: var(--good-bg); color: var(--good); }
+  .tag.warn { background: var(--warn-bg); color: var(--warn); }
+  .tag.crit { background: var(--crit-bg); color: var(--crit); }
+
+  /* budget skew */
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); padding: 20px; }
+  .bars { display: grid; gap: 12px; margin-top: 4px; }
+  .bar-row { display: grid; grid-template-columns: 170px 1fr 132px; align-items: center; gap: 14px; }
+  @media (max-width: 640px) { .bar-row { grid-template-columns: 110px 1fr; } .bar-row .bar-fig { grid-column: 1 / -1; text-align: left; } }
+  .bar-name { font-size: 13px; }
+  .bar-name b { display: block; font-weight: 600; }
+  .bar-name span { color: var(--ink-faint); font-size: 12px; }
+  .track { background: var(--surface-2); border-radius: 6px; height: 22px; overflow: hidden; position: relative; }
+  .fill { height: 100%; border-radius: 6px; background: var(--accent); }
+  .fill.dim { background: var(--line-strong); }
+  .bar-fig { font-family: var(--mono); font-size: 12.5px; font-variant-numeric: tabular-nums; color: var(--ink-soft); text-align: right; }
+  .bar-fig b { color: var(--ink); }
+
+  /* table */
+  .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; }
+  th, td { padding: 12px 14px; text-align: right; font-variant-numeric: tabular-nums; font-family: var(--mono); font-size: 13px; white-space: nowrap; }
+  th { font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-faint); font-family: var(--sans); font-weight: 600; border-bottom: 1px solid var(--line-strong); background: var(--surface-2); }
+  td.lead, th.lead { text-align: left; }
+  tbody tr { border-bottom: 1px solid var(--line); }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr.total { background: var(--surface-2); }
+  tbody tr.total td { font-weight: 700; color: var(--ink); }
+  .grp { font-family: var(--sans); }
+  .grp b { display: block; font-weight: 600; font-size: 13.5px; }
+  .grp span { color: var(--ink-faint); font-size: 12px; }
+  .pill { display: inline-block; font-family: var(--mono); font-size: 11px; padding: 2px 8px; border-radius: 999px; }
+  .pill.good { background: var(--good-bg); color: var(--good); }
+  .pill.warn { background: var(--warn-bg); color: var(--warn); }
+  .pill.crit { background: var(--crit-bg); color: var(--crit); }
+  .pill.mute { background: var(--surface-2); color: var(--ink-faint); }
+  .em { color: var(--ink); font-weight: 600; }
+  .zero { color: var(--ink-faint); }
+
+  /* takeaways + gaps */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 760px) { .cols { grid-template-columns: 1fr; } }
+  .list { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+  .list li { display: grid; grid-template-columns: 24px 1fr; gap: 10px; font-size: 14px; color: var(--ink-soft); }
+  .list .mark { font-family: var(--mono); font-size: 12px; color: var(--accent); padding-top: 1px; }
+  .list b { color: var(--ink); font-weight: 600; }
+  .gaps .mark { color: var(--warn); }
+
+  footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--ink-faint); font-family: var(--mono); display: flex; flex-wrap: wrap; gap: 6px 18px; }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="eyebrow">Этап 9 · Результаты открутки · Кэшбэк Браузер</p>
+    <h1>Кампания H1_marketplace — оптимизация на клики</h1>
+    <p class="sub">Одна кампания РСЯ, 5 связок «оффер + таргетинг» (K/T склеены 1:1), без кросс-тестов.
+    Конверсии — по Яндекс.Метрике; расход и трафик — по Директу.</p>
+    <div class="meta-row">
+      <span>Период: <b>запуск э.9</b></span>
+      <span>Площадка: <b>Яндекс Директ / РСЯ</b></span>
+      <span>Цель оптимизации: <b>клики</b></span>
+      <span>Целевое действие: <b>заявка (контактные данные)</b></span>
+      <span>Трафик: <b>98% мобайл</b></span>
+    </div>
+  </header>
+
+  <!-- KPIs -->
+  <div class="sect-title"><h2>Сводка</h2><span class="hint" id="viewHint">// весь трафик кампании</span></div>
+  <div class="tabs" role="tablist" aria-label="Выбор связки">
+    <button class="tab is-active" role="tab" aria-selected="true" data-view="all">Все связки</button>
+    <button class="tab" role="tab" aria-selected="false" data-view="K1">K1 · compare-save</button>
+    <button class="tab" role="tab" aria-selected="false" data-view="K2">K2 · cashback-on-site</button>
+    <button class="tab" role="tab" aria-selected="false" data-view="K3">K3 · no-activation</button>
+    <button class="tab" role="tab" aria-selected="false" data-view="K4">K4 · seller-check</button>
+    <button class="tab" role="tab" aria-selected="false" data-view="K5">K5 · welcome-bonus</button>
+  </div>
+  <div class="kpis" id="kpiGrid" role="tabpanel" aria-live="polite"></div>
+
+  <!-- Budget skew -->
+  <div class="sect-title"><h2>Распределение бюджета</h2><span class="hint">// оптимизация на клики → перекос охвата</span></div>
+  <div class="card">
+    <div class="bars">
+      <div class="bar-row">
+        <div class="bar-name"><b>K3 no-activation</b><span>icp-03 optimizers</span></div>
+        <div class="track"><div class="fill" style="width:100%"></div></div>
+        <div class="bar-fig"><b>1 333 ₽</b> · 53% · 904 клик</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-name"><b>K2 cashback-on-site</b><span>icp-02 web-native</span></div>
+        <div class="track"><div class="fill" style="width:43.6%"></div></div>
+        <div class="bar-fig"><b>581 ₽</b> · 23% · 385 клик</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-name"><b>K5 welcome-bonus</b><span>icp-05 heavy-app</span></div>
+        <div class="track"><div class="fill" style="width:41.6%"></div></div>
+        <div class="bar-fig"><b>555 ₽</b> · 22% · 416 клик</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-name"><b>K1 compare-save</b><span>icp-01 comparers · приоритет №1</span></div>
+        <div class="track"><div class="fill dim" style="width:1.7%"></div></div>
+        <div class="bar-fig"><b>23 ₽</b> · 1% · 15 клик</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-name"><b>K4 seller-check</b><span>icp-04 fake-wary</span></div>
+        <div class="track"><div class="fill dim" style="width:0.6%"></div></div>
+        <div class="bar-fig"><b>8 ₽</b> · 0.3% · 8 клик</div>
+      </div>
+    </div>
+    <p style="margin:16px 0 0;font-size:13px;color:var(--ink-soft)">
+      Директ слил бюджет в дешёвые клики: <b style="color:var(--ink)">K3 забрал 53%</b>, тогда как приоритетная связка
+      K1 (comparers) и K4 (fake-wary) получили &lt;2% — <b style="color:var(--ink)">фактически не протестированы</b>.
+    </p>
+  </div>
+
+  <!-- Group table -->
+  <div class="sect-title"><h2>Связки: оффер × аудитория</h2><span class="hint">// расход — Директ · заявки — Метрика</span></div>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th class="lead">Связка</th>
+          <th>Расход</th>
+          <th>Клики</th>
+          <th>CTR</th>
+          <th>Визиты</th>
+          <th>Заявки</th>
+          <th>CR в заявку</th>
+          <th>Время</th>
+          <th class="lead">Вердикт</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="lead grp"><b>K5 welcome-bonus</b><span>icp-05 heavy-app</span></td>
+          <td>555 ₽</td><td>416</td><td>4.01%</td><td>480</td>
+          <td class="em">2</td><td class="em">0.42%</td><td>1:16</td>
+          <td class="lead"><span class="pill good">сигнал есть</span></td>
+        </tr>
+        <tr>
+          <td class="lead grp"><b>K3 no-activation</b><span>icp-03 optimizers</span></td>
+          <td>1 333 ₽</td><td>904</td><td>3.27%</td><td>960</td>
+          <td>1</td><td>0.10%</td><td>1:07</td>
+          <td class="lead"><span class="pill warn">объём есть, CR низкий</span></td>
+        </tr>
+        <tr>
+          <td class="lead grp"><b>K2 cashback-on-site</b><span>icp-02 web-native</span></td>
+          <td>581 ₽</td><td>385</td><td class="em">4.15%</td><td>385</td>
+          <td class="zero">0</td><td class="zero">0.00%</td><td>0:45</td>
+          <td class="lead"><span class="pill crit">кликбейт</span></td>
+        </tr>
+        <tr>
+          <td class="lead grp"><b>K1 compare-save</b><span>icp-01 comparers · приоритет №1</span></td>
+          <td>23 ₽</td><td>15</td><td>1.93%</td><td>20</td>
+          <td>1</td><td>5.00%*</td><td>0:23</td>
+          <td class="lead"><span class="pill mute">не протестирован</span></td>
+        </tr>
+        <tr>
+          <td class="lead grp"><b>K4 seller-check</b><span>icp-04 fake-wary</span></td>
+          <td>8 ₽</td><td>8</td><td>2.47%</td><td>9</td>
+          <td class="zero">0</td><td class="zero">0.00%</td><td>0:08</td>
+          <td class="lead"><span class="pill mute">не протестирован</span></td>
+        </tr>
+        <tr class="total">
+          <td class="lead grp"><b>Итого</b></td>
+          <td>2 500 ₽</td><td>1 728</td><td>3.57%</td><td>1 839</td>
+          <td>4</td><td>0.19%</td><td>1:04</td>
+          <td class="lead">—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin:10px 2px 0;font-size:12px;color:var(--ink-faint);font-family:var(--mono)">
+    * K1: 1 заявка на 20 визитов — статистический шум, не результат. CR считается по посетителям (Метрика).
+  </p>
+
+  <!-- Takeaways + gaps -->
+  <div class="cols" style="margin-top:44px">
+    <div>
+      <div class="sect-title" style="margin-top:0"><h2>Ключевые выводы</h2></div>
+      <ul class="list">
+        <li><span class="mark">01</span><span><b>Проблема в конверсии, не в трафике.</b> CTR 3.57% здоровый, роботность 0.3% — но в заявку доходит 0.19%. Узкое место — лендинг/оффер-фит.</span></li>
+        <li><span class="mark">02</span><span><b>CTR ≠ конверсия.</b> K2 — лучший CTR (4.15%) и 0 заявок: обещание объявления не совпадает с лендингом.</span></li>
+        <li><span class="mark">03</span><span><b>K5 welcome-bonus — единственный сигнал</b> (2 заявки, макс. время 1:16). Но риск бонус-охотников — нужен retention.</span></li>
+        <li><span class="mark">04</span><span><b>Тест «грязный».</b> K/T склеены 1:1 + перекос бюджета: вклад оффера и аудитории не разделить, K1/K4 немы.</span></li>
+        <li><span class="mark">05</span><span><b>Из двух кнопок «Скачать» работает одна.</b> Все 6 кликов пришлись на одну кнопку, вторая — 0. CTA дублируются неэффективно: одну не долистывают или она неубедительна.</span></li>
+      </ul>
+    </div>
+    <div class="gaps">
+      <div class="sect-title" style="margin-top:0"><h2>Чего не хватает</h2><span class="hint">// собрать в след. раунде</span></div>
+      <ul class="list">
+        <li><span class="mark">+</span><span><b>Поведение на лендинге</b> — scroll-depth, карта кликов, точка отвала. Данных нет — <b>доработать сбор.</b></span></li>
+        <li><span class="mark">+</span><span><b>Равный бюджет по группам</b> — чтобы домерить K1 и K4.</span></li>
+        <li><span class="mark">+</span><span><b>Развязка оффер vs таргетинг</b> — разнести оси по группам + кросс-тесты X1–X3.</span></li>
+        <li><span class="mark">+</span><span><b>Стат-значимость</b> — 4 заявки суммарно, доверительных интервалов нет.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <span>Источники: metrika-main · metrika-guardrails · direct-conversion-*</span>
+    <span>Атрибуция: конверсии — Метрика, расход — Директ</span>
+    <span>cycle/marketplace-vision</span>
+  </footer>
+</div>
+
+<script>
+  // Данные: расход/клики/CTR/CPC — Директ; визиты/посетители/поведение/заявки/скачивания — Метрика.
+  const DATA = {
+    all: { hint: "// весь трафик кампании", spend:"2 500", clicks:"1 728", ctr:"3.57", cpc:"1.45",
+      visits:"2 151", users:"1 839", robots:"0.3", bounce:"44",
+      apps:"4", cr:"0.19", crTone:"crit", crNote:'<span class="tag crit">узкое место</span> теряется 99.8%',
+      cpa:"625", cpaNote:"2 500 ₽ / 4 заявки", dl:"6", dlNote:'обе кнопки · <span class="tag warn">1 из 2 не нажимали</span>', time:"1:04", timeNote:"глубина = 1 (одностраничник)" },
+    K1: { hint:"// K1 compare-save × icp-01 comparers · приоритет №1", spend:"23", clicks:"15", ctr:"1.93", cpc:"1.54",
+      visits:"20", users:"20", robots:"0.0", bounce:"40",
+      apps:"1", cr:"5.00", crTone:"mute", crNote:'<span class="tag warn">n=20 · шум</span> не протестирован',
+      cpa:"23", cpaNote:"23 ₽ / 1 заявка · нерепрезентативно", dl:"1", dlNote:"обе кнопки суммарно", time:"0:23", timeNote:"мало данных" },
+    K2: { hint:"// K2 cashback-on-site × icp-02 web-native", spend:"581", clicks:"385", ctr:"4.15", cpc:"1.51",
+      visits:"442", users:"385", robots:"0.2", bounce:"38",
+      apps:"0", cr:"0.00", crTone:"crit", crNote:'<span class="tag crit">кликбейт</span> лучший CTR, 0 заявок',
+      cpa:"—", cpaNote:"нет заявок", dl:"0", dlNote:"ни одна кнопка не нажималась", time:"0:45", timeNote:"мин. время на сайте" },
+    K3: { hint:"// K3 no-activation × icp-03 optimizers", spend:"1 333", clicks:"904", ctr:"3.27", cpc:"1.47",
+      visits:"1 096", users:"960", robots:"0.5", bounce:"47",
+      apps:"1", cr:"0.10", crTone:"warn", crNote:'<span class="tag warn">объём есть</span> CR низкий',
+      cpa:"1 333", cpaNote:"1 333 ₽ / 1 заявка", dl:"3", dlNote:'обе кнопки · <span class="tag warn">1 из 2 не нажимали</span>', time:"1:07", timeNote:"53% бюджета" },
+    K4: { hint:"// K4 seller-check × icp-04 fake-wary", spend:"8", clicks:"8", ctr:"2.47", cpc:"1.00",
+      visits:"9", users:"9", robots:"0.0", bounce:"44",
+      apps:"0", cr:"0.00", crTone:"mute", crNote:'<span class="tag warn">n=9</span> не протестирован',
+      cpa:"—", cpaNote:"нет заявок", dl:"0", dlNote:"нет кликов", time:"0:08", timeNote:"мало данных" },
+    K5: { hint:"// K5 welcome-bonus × icp-05 heavy-app", spend:"555", clicks:"416", ctr:"4.01", cpc:"1.33",
+      visits:"581", users:"480", robots:"0.0", bounce:"42",
+      apps:"2", cr:"0.42", crTone:"good", crNote:'<span class="tag good">сигнал есть</span> лучший CR',
+      cpa:"277", cpaNote:"555 ₽ / 2 заявки", dl:"2", dlNote:'обе кнопки · <span class="tag warn">1 из 2 не нажимали</span>', time:"1:16", timeNote:"макс. время на сайте" },
+  };
+
+  function card(label, val, unit, note, flag) {
+    return '<div class="kpi' + (flag ? ' flag' : '') + '">' +
+      '<p class="label">' + label + '</p>' +
+      '<div class="val">' + val + (unit ? '<span class="unit">' + unit + '</span>' : '') + '</div>' +
+      '<p class="note">' + note + '</p></div>';
+  }
+
+  function render(view) {
+    const d = DATA[view];
+    document.getElementById('viewHint').textContent = d.hint;
+    const crFlag = d.crTone === 'crit';
+    const cpaFlag = d.crTone === 'crit';
+    document.getElementById('kpiGrid').innerHTML = [
+      card('Расход', d.spend, '₽', 'Директ · бюджет открутки', false),
+      card('Клики', d.clicks, '', 'CTR ' + d.ctr + '% · CPC ' + d.cpc + ' ₽', false),
+      card('Визиты / посетители', d.visits, '/ ' + d.users, 'Роботность ' + d.robots + '% · отказы ' + d.bounce + '%', false),
+      card('Заявки (Метрика)', d.apps, '', 'заполнили контактные данные', d.apps === '0'),
+      card('Конверсия в заявку', d.cr, '%', d.crNote, crFlag),
+      card('Стоимость заявки', d.cpa, d.cpa === '—' ? '' : '₽', d.cpaNote, cpaFlag),
+      card('Клики «Скачать»', d.dl, '', d.dlNote, false),
+      card('Ср. время на сайте', d.time, '', d.timeNote, false),
+    ].join('');
+  }
+
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      tabs.forEach(function (x) { x.classList.remove('is-active'); x.setAttribute('aria-selected', 'false'); });
+      t.classList.add('is-active'); t.setAttribute('aria-selected', 'true');
+      render(t.dataset.view);
+    });
+  });
+  render('all');
+</script>
