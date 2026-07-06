@@ -156,6 +156,15 @@
   .em { color: var(--ink); font-weight: 600; }
   .zero { color: var(--ink-faint); }
 
+  /* placements */
+  .plat-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  @media (max-width: 760px) { .plat-cols { grid-template-columns: 1fr; } }
+  .plat-head { font-size: 12.5px; font-weight: 600; margin: 0 0 10px; letter-spacing: .01em; }
+  .plat-head.good-head { color: var(--good); }
+  .plat-head.crit-head { color: var(--crit); }
+  .plat-cols .table-scroll table { min-width: 340px; }
+  .card code { font-family: var(--mono); font-size: 12px; background: var(--surface-2); padding: 1px 6px; border-radius: 5px; color: var(--ink); white-space: nowrap; }
+
   /* takeaways + gaps */
   .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   @media (max-width: 760px) { .cols { grid-template-columns: 1fr; } }
@@ -292,22 +301,72 @@
     * K1: 1 заявка на 20 визитов — статистический шум, не результат. CR считается по посетителям (Метрика).
   </p>
 
+  <!-- Placements -->
+  <div class="sect-title"><h2>Разрез по площадкам</h2><span class="hint">// metrika-platforms · 248 площадок</span></div>
+  <div class="card">
+    <p style="margin:0 0 16px;font-size:14px;color:var(--ink-soft)">
+      Почти весь трафик — <b style="color:var(--ink)">мобильные app-игры и DSP-биржи</b> (дешёвый клик РСЯ, случайные тапы).
+      <b style="color:var(--ink)">Все конверсии пришли только с двух поверхностей</b> — остальные 246 площадок дали 0 заявок.
+    </p>
+    <div class="plat-cols">
+      <div>
+        <p class="plat-head good-head">✅ Конвертит — оставить</p>
+        <div class="table-scroll" style="box-shadow:none">
+          <table>
+            <thead><tr><th class="lead">Площадка</th><th>Визиты</th><th>Заявки</th><th>Скач.</th></tr></thead>
+            <tbody>
+              <tr><td class="lead grp"><b>Не определено</b><span>прямой / поиск / 1-й экран</span></td><td>~170</td><td class="em">3</td><td class="em">6</td></tr>
+              <tr><td class="lead grp"><b>ya.ru</b><span>Яндекс — поиск</span></td><td>1</td><td class="em">1</td><td class="em">2</td></tr>
+              <tr><td class="lead grp"><b>dsp.yandex.ru</b><span>только скачивания</span></td><td>~776</td><td class="zero">0</td><td>2</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <p class="plat-head crit-head">❌ Стоп-лист — исключить (топ по объёму, 0 заявок)</p>
+        <div class="table-scroll" style="box-shadow:none">
+          <table>
+            <thead><tr><th class="lead">Площадка</th><th>Тип</th><th>~Визиты</th><th>Заявки</th></tr></thead>
+            <tbody>
+              <tr><td class="lead grp"><b>dsp.yandex.ru</b></td><td>DSP</td><td>~776</td><td class="zero">0</td></tr>
+              <tr><td class="lead grp"><b>dsp-opera-exchange.yandex.ru</b></td><td>DSP</td><td>~194</td><td class="zero">0</td></tr>
+              <tr><td class="lead grp"><b>com.fugo.wow</b></td><td>app-игра</td><td>~123</td><td class="zero">0</td></tr>
+              <tr><td class="lead grp"><b>com.oakever.tiletrip</b></td><td>app-игра</td><td>~86</td><td class="zero">0</td></tr>
+              <tr><td class="lead grp"><b>...wordpizza / magicwordsearch</b></td><td>app-игра</td><td>~140</td><td class="zero">0</td></tr>
+              <tr><td class="lead grp"><b>dsp-yeahmobi / unityads / betweenx</b></td><td>DSP</td><td>~188</td><td class="zero">0</td></tr>
+              <tr><td class="lead grp"><b>game.yandex.ru</b></td><td>Я.Игры</td><td>~19</td><td class="zero">0</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p style="margin:16px 0 0;font-size:13px;color:var(--ink-soft)">
+      <b style="color:var(--ink)">Паттерны на исключение:</b>
+      <code>com.*</code> · <code>*.mi</code> · <code>*.xm</code> · <code>dsp-*.yandex.ru</code> · <code>dsp.yandex.ru</code> ·
+      <code>game.yandex.ru</code> · читательские (<code>litmir.club</code>, <code>readli.net</code>, <code>video.like</code>).
+      Хвост ~200 площадок по 1–9 визитов с 0 заявок отсекается ими же.
+    </p>
+  </div>
+
   <!-- Takeaways + gaps -->
   <div class="cols" style="margin-top:44px">
     <div>
       <div class="sect-title" style="margin-top:0"><h2>Ключевые выводы</h2></div>
       <ul class="list">
-        <li><span class="mark">01</span><span><b>Проблема в конверсии, не в трафике.</b> CTR 3.57% здоровый, роботность 0.3% — но в заявку доходит 0.19%. Узкое место — лендинг/оффер-фит.</span></li>
-        <li><span class="mark">02</span><span><b>CTR ≠ конверсия.</b> K2 — лучший CTR (4.15%) и 0 заявок: обещание объявления не совпадает с лендингом.</span></li>
-        <li><span class="mark">03</span><span><b>K5 welcome-bonus — единственный сигнал</b> (2 заявки, макс. время 1:16). Но риск бонус-охотников — нужен retention.</span></li>
-        <li><span class="mark">04</span><span><b>Тест «грязный».</b> K/T склеены 1:1 + перекос бюджета: вклад оффера и аудитории не разделить, K1/K4 немы.</span></li>
-        <li><span class="mark">05</span><span><b>Из двух кнопок «Скачать» работает одна.</b> Все 6 кликов пришлись на одну кнопку, вторая — 0. CTA дублируются неэффективно: одну не долистывают или она неубедительна.</span></li>
+        <li><span class="mark">01</span><span><b>Трафик пришёл не туда.</b> Почти весь объём — app-игры и DSP-биржи РСЯ (случайные тапы). Конверсии — только с <b>Не определено</b> и <b>ya.ru</b>; остальные 246 площадок = 0.</span></li>
+        <li><span class="mark">02</span><span><b>Ранжирование офферов невалидно.</b> CTR/CR K1–K5 определялись миксом площадок, а не оффером — сравнивать офферы можно лишь внутри чистого инвентаря.</span></li>
+        <li><span class="mark">03</span><span><b>CTR ≠ конверсия.</b> K2 — лучший CTR (4.15%) и 0 заявок. Высокий CTR давали именно дешёвые игровые тапы.</span></li>
+        <li><span class="mark">04</span><span><b>K5 welcome-bonus — единственный сигнал</b> (2 заявки, макс. время 1:16). Но риск бонус-охотников — нужен retention.</span></li>
+        <li><span class="mark">05</span><span><b>Долистывают только до 2-го шага.</b> По скроллу пользователи отваливаются на карточке второго шага — до нижних блоков и основного CTA доходят единицы. Оффер и CTA нужно поднять выше.</span></li>
+        <li><span class="mark">06</span><span><b>Из двух кнопок «Скачать» работает одна.</b> <code style="font-family:var(--mono);font-size:12px">click_download</code> = 0 на всех 248 площадках (кнопка ниже зоны прочтения), кликали только ссылку в шапке.</span></li>
       </ul>
     </div>
     <div class="gaps">
       <div class="sect-title" style="margin-top:0"><h2>Чего не хватает</h2><span class="hint">// собрать в след. раунде</span></div>
       <ul class="list">
-        <li><span class="mark">+</span><span><b>Поведение на лендинге</b> — scroll-depth, карта кликов, точка отвала. Данных нет — <b>доработать сбор.</b></span></li>
+        <li><span class="mark">+</span><span><b>Чистка площадок (приоритет 0)</b> — исключить app-игры и DSP по стоп-листу до правок лендинга.</span></li>
+        <li><span class="mark">+</span><span><b>Что за «Не определено»</b> — единственный конвертящий бакет; если это Поиск, вывод про лендинг смягчается.</span></li>
+        <li><span class="mark">+</span><span><b>Карта кликов и точки отвала по блокам</b> — скролл уже показал отвал на 2-м шаге; нужна полная картина, где теряем.</span></li>
         <li><span class="mark">+</span><span><b>Равный бюджет по группам</b> — чтобы домерить K1 и K4.</span></li>
         <li><span class="mark">+</span><span><b>Развязка оффер vs таргетинг</b> — разнести оси по группам + кросс-тесты X1–X3.</span></li>
         <li><span class="mark">+</span><span><b>Стат-значимость</b> — 4 заявки суммарно, доверительных интервалов нет.</span></li>
@@ -316,7 +375,7 @@
   </div>
 
   <footer>
-    <span>Источники: metrika-main · metrika-guardrails · direct-conversion-*</span>
+    <span>Источники: metrika-main · metrika-guardrails · metrika-platforms · direct-conversion-*</span>
     <span>Атрибуция: конверсии — Метрика, расход — Директ</span>
     <span>cycle/marketplace-vision</span>
   </footer>
